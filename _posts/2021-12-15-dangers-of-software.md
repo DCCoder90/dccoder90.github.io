@@ -1,5 +1,5 @@
 ---
-title: "The dangers of software"
+title: "Dangers of software"
 date: "2021-12-15"
 categories:
 - "general"
@@ -10,6 +10,7 @@ categories:
 - "vscode"
   coverImage: "61b5c0dc998ead07e557a882.png"
 ---
+
 # What's going on?
 
 I have to say this past week has been a real eye-opener for many industries, but I believe the biggest one is the technology industry.
