@@ -2,13 +2,13 @@
 title: "Dangers of software"
 date: "2021-12-15"
 categories:
-- "general"
-- "programming"
-  tags:
-- "net"
-- "c"
-- "vscode"
-  coverImage: "61b5c0dc998ead07e557a882.png"
+  - "general"
+  - "programming"
+tags:
+  - "net"
+  - "c"
+  - "vscode"
+coverImage: "61b5c0dc998ead07e557a882.png"
 ---
 
 # What's going on?
