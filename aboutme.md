@@ -103,4 +103,6 @@ My name is Ernest Mallett.  I am a Sr. Software Engineer working at [Computacent
     <a href="https://www.stackoverflow.com"><img alt="Stack Overflow" src="https://img.shields.io/badge/-Stack%20Overflow-FE7A16?logo=stack-overflow&logoColor=white"></a>
     <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white"></a>
     <a href="https://www.jetbrains.com/"><img alt="Jetbrains" src="https://img.shields.io/badge/Jetbrains-121011.svg?logo=jetbrains&logoColor=white"></a>
+    <a href="https://www.jetbrains.com/teamcity/"><img alt="Teamcity" src="https://img.shields.io/badge/Teamcity-2671E5.svg?logo=teamcity&logoColor=white"></a>
+    <a href="https://www.jetbrains.com/space/"><img alt="Space" src="https://img.shields.io/badge/Space-000000.svg?logo=jetbrains&logoColor=blue"></a>
 </p>
