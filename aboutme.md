@@ -5,9 +5,11 @@ subtitle:
 ---
 
 
+
 <h1 align="center">
-Hi, I'm DCCoder!
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30"></h1>
+	Hi, I'm DCCoder!
+	<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30">
+</h1>
 <br/>
 
 <!-- Typing SVG by DCCoder90 - https://github.com/DCCoder90/readme-typing-svg -->
@@ -16,7 +18,7 @@ Hi, I'm DCCoder!
 </p>
 <hr/>
 
-My name is Ernest Mallett.  I am a Sr. Software Engineer working at [Computacenter-US](https://www.computacenter.com/us).  Formerly I have been a C# development instructor, Lead Developer, Team Lead, and other positions with other companies. I have been programming since I was 8 years old, starting with Basic and working my way up.   My first love was PHP, developing websites and data collection interfaces.
+My name is Ernest Mallett.  I am a Principal Engineer working at [Elsevier](https://beta.elsevier.com/?trial=true) in the [Aries](https://www.ariessys.com/) department.  Formerly I have been a C# development instructor, Lead Developer, Team Lead, Sr. Engineer, and other positions with other companies. I have been programming since I was 8 years old, starting with Basic and working my way up.   My first love was PHP, developing websites and data collection interfaces.
 
 [![DCCoder StackOverflow](https://stackoverflow-badge.vercel.app/?userID=8333554)](https://stackoverflow.com/users/8333554/dccoder)
 
@@ -27,12 +29,11 @@ My name is Ernest Mallett.  I am a Sr. Software Engineer working at [Computacent
   </a>
 </p>
 
-[![DCCoder's github activity graph](https://activity-graph.herokuapp.com/graph?username=dccoder90&theme=react-dark)](https://github.com/dccoder90/github-readme-activity-graph)
-
 ### 👨‍💻 Programming languages
 
 <p>
     <a href="https://github.com/search?q=user%3ADCCoder90+language%3Abash"><img alt="Bash" src="https://img.shields.io/badge/Bash-121011.svg?logo=gnu-bash&logoColor=white"></a>
+	<a href="https://github.com/search?q=user%3ADCCoder90+language%3Acplusplus"><img alt="C++" src="https://img.shields.io/badge/C++-121011.svg?logo=cplusplus&logoColor=blue"></a>
     <a href="https://github.com/search?q=user%3ADCCoder90+language%3Acsharp"><img alt="C#" src="https://img.shields.io/badge/C%23-239120.svg?logo=c-sharp&logoColor=white"></a>
     <a href="https://github.com/search?q=user%3ADCCoder90+language%3Acss"><img alt="CSS" src="https://img.shields.io/badge/CSS-1572B6.svg?logo=css3&logoColor=white"></a>
     <a href="https://github.com/search?q=user%3ADCCoder90+language%3Adart"><img alt="Dart" src="https://img.shields.io/badge/Dart-15A6C4.svg?logo=dart&logoColor=white"></a>
@@ -103,6 +104,4 @@ My name is Ernest Mallett.  I am a Sr. Software Engineer working at [Computacent
     <a href="https://www.stackoverflow.com"><img alt="Stack Overflow" src="https://img.shields.io/badge/-Stack%20Overflow-FE7A16?logo=stack-overflow&logoColor=white"></a>
     <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white"></a>
     <a href="https://www.jetbrains.com/"><img alt="Jetbrains" src="https://img.shields.io/badge/Jetbrains-121011.svg?logo=jetbrains&logoColor=white"></a>
-    <a href="https://www.jetbrains.com/teamcity/"><img alt="Teamcity" src="https://img.shields.io/badge/Teamcity-2671E5.svg?logo=teamcity&logoColor=white"></a>
-    <a href="https://www.jetbrains.com/space/"><img alt="Space" src="https://img.shields.io/badge/Space-000000.svg?logo=jetbrains&logoColor=blue"></a>
 </p>
