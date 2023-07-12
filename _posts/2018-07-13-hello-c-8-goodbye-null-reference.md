@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Hello C# 8, goodbye null reference!"
 date: "2018-07-13"
 categories: 
