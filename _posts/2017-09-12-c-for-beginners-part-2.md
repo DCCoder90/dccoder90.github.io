@@ -1,4 +1,5 @@
 ---
+share: true
 title: "C# for Beginners [Part 2]"
 date: "2017-09-12"
 categories: 
