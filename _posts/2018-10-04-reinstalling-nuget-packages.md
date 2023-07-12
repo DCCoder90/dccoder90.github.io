@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Reinstalling Nuget Packages"
 date: "2018-10-04"
 categories: 
