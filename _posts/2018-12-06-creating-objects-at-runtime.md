@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Creating objects at runtime"
 date: "2018-12-06"
 categories: 
