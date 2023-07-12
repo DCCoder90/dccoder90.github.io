@@ -1,4 +1,5 @@
 ---
+share: true
 layout: page
 title: About me
 subtitle: 
