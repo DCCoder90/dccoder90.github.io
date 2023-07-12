@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Storing Sessions in a database"
 date: "2011-10-05"
 categories: 
