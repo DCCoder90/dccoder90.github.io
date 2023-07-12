@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Secure Hashing"
 date: "2011-10-05"
 categories: 
