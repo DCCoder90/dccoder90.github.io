@@ -1,4 +1,5 @@
 ---
+share: true
 title: "How to get started blogging?"
 date: "2018-07-11"
 categories: 
