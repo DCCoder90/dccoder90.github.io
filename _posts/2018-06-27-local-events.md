@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Local Events"
 date: "2018-06-27"
 categories: 
