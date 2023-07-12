@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Why are software developers paid well?"
 date: "2018-06-13"
 categories: 
