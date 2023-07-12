@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Comments are useless, sometimes evil!"
 date: "2018-07-09"
 categories: 
