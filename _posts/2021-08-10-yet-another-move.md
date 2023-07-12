@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Yet another move"
 date: "2021-08-10"
 categories: 

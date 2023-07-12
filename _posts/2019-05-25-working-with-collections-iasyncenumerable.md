@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Working with collections - IAsyncEnumerable"
 date: "2019-05-25"
 categories: 

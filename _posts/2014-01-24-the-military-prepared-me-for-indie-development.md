@@ -1,4 +1,5 @@
 ---
+share: true
 title: "The military prepared me for indie development"
 date: "2014-01-24"
 categories: 

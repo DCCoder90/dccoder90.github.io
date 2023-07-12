@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Why are software developers paid well?"
 date: "2018-06-13"
 categories: 
@@ -19,7 +20,7 @@ My coworkers and I have had many conversations about what our job actually is. I
 
 Even my own family seems shocked when they hear that I make a decent living sitting in front of a computer typing and in meeting rooms all day.  [A](https://dccoder.files.wordpress.com/2020/09/0c62b-payscale.png)ccording to [UsNews Money](https://money.usnews.com/careers/best-jobs/software-developer/salary), in 2016 the median salary for a software developer was $100,080 annually.
 
-![](images/0c62b-payscale.png)
+![](0c62b-payscale.png)
 
  
 
@@ -37,7 +38,7 @@ These are the types of issues that many developers will come to see on an almost
 
 ## **Multi-tasking**
 
-Nearly every software developer I have met agrees that this is a factor that helps determine how proficient they are.  Due to the move to Agile methodologies [![](images/36c60-il_340x270.1384808961_nq09.jpg)](https://dccoder.files.wordpress.com/2020/09/36c60-il_340x270.1384808961_nq09.jpg)many teams are now expected to be cross-disciplined.  Rather than simply working in just one area a developer now has to work across all facets of an application.  Within the few short months of being at my new job I have worked on Front-end, Back-end, Database, and all of these in dozens of different projects, often jumping between 3 or more projects a day.
+Nearly every software developer I have met agrees that this is a factor that helps determine how proficient they are.  Due to the move to Agile methodologies [![](36c60-il_340x270.1384808961_nq09.jpg)](https://dccoder.files.wordpress.com/2020/09/36c60-il_340x270.1384808961_nq09.jpg)many teams are now expected to be cross-disciplined.  Rather than simply working in just one area a developer now has to work across all facets of an application.  Within the few short months of being at my new job I have worked on Front-end, Back-end, Database, and all of these in dozens of different projects, often jumping between 3 or more projects a day.
 
  
 
@@ -45,7 +46,7 @@ Due to the constant switching around and changing areas developers are fully exp
 
 ## **Fast Learner**
 
-It's no surprise that technology is constantly changing.  I'm sure even you have complained when buying a new computer or phone that the second you bought it, the item was "o[![](images/1729c-hqdefault.jpg)](https://dccoder.files.wordpress.com/2020/09/1729c-hqdefault.jpg)ut of date".  While that may not be completely true, things change fast in our industry, at least every 6 months a new framework is released, or an update has been pushed out that changes everything.  Due to this developers have to be fast learners, often spending personal time just keeping up with trends and languages.
+It's no surprise that technology is constantly changing.  I'm sure even you have complained when buying a new computer or phone that the second you bought it, the item was "o[![](1729c-hqdefault.jpg)](https://dccoder.files.wordpress.com/2020/09/1729c-hqdefault.jpg)ut of date".  While that may not be completely true, things change fast in our industry, at least every 6 months a new framework is released, or an update has been pushed out that changes everything.  Due to this developers have to be fast learners, often spending personal time just keeping up with trends and languages.
 
 Thankfully, while things change it's usually not dramatic to those that have been staying on top of things.  Developers are constantly learning, usually at least one new language or massive framework every year.
 

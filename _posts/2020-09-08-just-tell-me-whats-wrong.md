@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Just tell me what's wrong!"
 date: "2020-09-08"
 categories: 
