@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Moving time!"
 date: "2020-09-04"
 categories: 
