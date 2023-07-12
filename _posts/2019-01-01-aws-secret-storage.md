@@ -1,4 +1,5 @@
 ---
+share: true
 title: "AWS Secret Storage"
 date: "2019-01-01"
 categories: 
