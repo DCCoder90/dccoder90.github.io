@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Building a self-hosted API with OWIN"
 date: "2018-08-10"
 categories: 
@@ -35,7 +36,7 @@ Maybe your company does some form of image or text processing and you want an AP
 
 Before we start coding, first we need to set up a few things.  Don't worry, this won't take long.   First let's open up and create a new console project using the .Net Framework!
 
-[![New Project](images/ee959-selfhostednewproject.png)](https://dccoder.files.wordpress.com/2020/09/ee959-selfhostednewproject.png)
+[![New Project](ee959-selfhostednewproject.png)](https://dccoder.files.wordpress.com/2020/09/ee959-selfhostednewproject.png)
 
  
 
@@ -101,17 +102,17 @@ Well, now that we have everything programmed hit "Start" and let's see it in act
 
 Once you hit "Start" you should see a console popup that looks like this:
 
-[![Console Window](images/732f9-programrunning.png)](https://dccoder.files.wordpress.com/2020/09/732f9-programrunning.png)
+[![Console Window](732f9-programrunning.png)](https://dccoder.files.wordpress.com/2020/09/732f9-programrunning.png)
 
 Yay! It's working! But this isn't very exciting. Let's open up a browser and navigate to where we have our API listening. I'm navigating to localhost:8080/api/Hello
 
-[![HelloWorld](images/2c00a-helloworld.png)](https://dccoder.files.wordpress.com/2020/09/2c00a-helloworld.png)
+[![HelloWorld](2c00a-helloworld.png)](https://dccoder.files.wordpress.com/2020/09/2c00a-helloworld.png)
 
  
 
 Look at that! It displays "Hello","World"! Just as we would have hoped! Now, let's get a little more fancy and add a "Name" onto the end of that. I'll put "DCCoder".
 
-[![Hello DCCoder](images/b0445-hellodccoder.png)](https://dccoder.files.wordpress.com/2020/09/b0445-hellodccoder.png)
+[![Hello DCCoder](b0445-hellodccoder.png)](https://dccoder.files.wordpress.com/2020/09/b0445-hellodccoder.png)
 
                    
 
