@@ -1,4 +1,5 @@
 ---
+share: true
 title: ".Net Notebooks"
 date: "2021-06-15"
 categories: 
