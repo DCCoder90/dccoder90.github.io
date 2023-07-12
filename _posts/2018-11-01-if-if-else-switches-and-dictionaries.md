@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Flow control: If/else, switches and....dictionaries?"
 date: "2018-11-01"
 categories: 
