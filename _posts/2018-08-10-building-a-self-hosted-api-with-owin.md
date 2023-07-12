@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Building a self-hosted API with OWIN"
 date: "2018-08-10"
 categories: 
