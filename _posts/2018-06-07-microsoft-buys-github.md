@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Microsoft buys GitHub"
 date: "2018-06-07"
 categories: 
