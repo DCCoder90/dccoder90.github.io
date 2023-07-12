@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Why I don't post on the weekends"
 date: "2018-07-30"
 categories: 
