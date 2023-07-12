@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Quick Update"
 date: "2023-06-28"
 categories:
