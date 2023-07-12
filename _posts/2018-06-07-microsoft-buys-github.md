@@ -18,7 +18,7 @@ Although this is a very smart business move many saw it coming, with GitHub on s
 
 But why are so many developers fleeing from their long time repository provider?  Shouldn't everyone be excited about such a large leader in the tech industry, with it's vast resources, acquiring GitHub?  Well this stems primarly from distrust of Microsoft.  Microsoft has long a long history of being against open source works.  Even Steve Ballmer (yes, developers developers developers developers) went as far as to say that open source was a "cancer".
 
-[![Steve Ballmer: "Developers, developers, developers, developers"](images/abe82-1_wezlyd1exr2jvup0meswaw.jpeg)](https://dccoder.files.wordpress.com/2020/09/abe82-1_wezlyd1exr2jvup0meswaw.jpeg)
+[![Steve Ballmer: "Developers, developers, developers, developers"](abe82-1_wezlyd1exr2jvup0meswaw.jpeg)](https://dccoder.files.wordpress.com/2020/09/abe82-1_wezlyd1exr2jvup0meswaw.jpeg)
 
 While I fully understand the general populace's level of agnst, one thing that should ease these feelings is that Microsoft purchased [not with cash but with stock](https://thenextweb.com/dd/2018/06/04/microsoft-buying-github-doesnt-scare-me/).  The stock purchase will ensure that Microsoft still has to answer to the owners of Github (being that they are now a major shareholder).
 
