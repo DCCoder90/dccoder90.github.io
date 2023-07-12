@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Unit Testing while maintaining access restrictions"
 date: "2018-11-25"
 categories: 
