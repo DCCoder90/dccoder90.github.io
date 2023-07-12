@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Dangers of software"
 date: "2021-12-15"
 categories:
