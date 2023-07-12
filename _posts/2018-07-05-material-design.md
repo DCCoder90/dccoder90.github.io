@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Material design, what is it and why you should be using it."
 date: "2018-07-05"
 categories: 
