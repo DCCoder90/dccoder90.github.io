@@ -1,4 +1,5 @@
 ---
+share: true
 title: "A wrinkle in time"
 date: "2020-09-06"
 categories: 
