@@ -1,4 +1,5 @@
 ---
+share: true
 title: "The trouble with OpenSource"
 date: "2019-09-23"
 categories: 
