@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Automated UI testing with Selenium"
 date: "2018-06-27"
 categories: 
