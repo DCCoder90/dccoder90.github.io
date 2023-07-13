@@ -10,7 +10,7 @@ tags:
   - "work"
 ---
 
-Over the past few years I've been diligently using [Joplin](../2021-08-10-yet-another-move.md) as my primary note taking application.  It's always been very clean and easy to work with, plus being able to sync it to my personal NAS has been very helpful.   But the other day I came across a new application and have been playing with it ever since.  The application in question is [Obsidian](https://obsidian.md/).  I was able to easily export all of my notes as markdown from Joplin and easily import them into Obsidian.  
+Over the past few years I've been diligently using [Joplin](../2021-08-10-yet-another-move) as my primary note taking application.  It's always been very clean and easy to work with, plus being able to sync it to my personal NAS has been very helpful.   But the other day I came across a new application and have been playing with it ever since.  The application in question is [Obsidian](https://obsidian.md/).  I was able to easily export all of my notes as markdown from Joplin and easily import them into Obsidian.  
 
 Along with the ease of migration I have even been able to import all of my blog posts and use the [Github Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) plugin to help maintain my posts!  This keeps my dev diary, personal journal, work journal, and blog posts all in one spot!  This is a free application, although you can pay for [Syncing](https://obsidian.md/sync) or [Publishing](https://obsidian.md/publish) if you want, but personally I'm just using one of the many plugins to facilitate that for me.
 
