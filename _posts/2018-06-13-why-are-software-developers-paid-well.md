@@ -18,9 +18,9 @@ coverImage: "8d66f-payscale.png"
 
 My coworkers and I have had many conversations about what our job actually is. Is it coding? Testing? Design? What about our skills translates to higher pay over those that do more demanding jobs? (Think police, first responders, military)
 
-Even my own family seems shocked when they hear that I make a decent living sitting in front of a computer typing and in meeting rooms all day.  [A](https://dccoder.files.wordpress.com/2020/09/0c62b-payscale.png)ccording to [UsNews Money](https://money.usnews.com/careers/best-jobs/software-developer/salary), in 2016 the median salary for a software developer was $100,080 annually.
+Even my own family seems shocked when they hear that I make a decent living sitting in front of a computer typing and in meeting rooms all day.  According to [UsNews Money](https://money.usnews.com/careers/best-jobs/software-developer/salary), in 2016 the median salary for a software developer was $100,080 annually.
 
-![](images/0c62b-payscale.png)
+![](../images/0c62b-payscale.png)
 
  
 
