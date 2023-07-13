@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Flow control: If/else, switches and....dictionaries?"
 date: "2018-11-01"
 categories: 
@@ -25,11 +26,11 @@ You can use dictionaries in place of large switches and the code is found [here]
 
 To start I made a small useless program with a fairly small switch statement only using 3 cases.
 
-\[caption id="attachment\_936" align="aligncenter" width="382"\][![Small switch statement in c#](images/60968-smallswitch.png)](https://dccoder.files.wordpress.com/2020/09/60968-smallswitch.png) Small switch statement in c#\[/caption\]
+\[caption id="attachment\_936" align="aligncenter" width="382"\][![Small switch statement in c#](60968-smallswitch.png)](https://dccoder.files.wordpress.com/2020/09/60968-smallswitch.png) Small switch statement in c#\[/caption\]
 
 Once I compiled the program I used JetBrain's DotPeek to take a look at the de-compiled source.  Interestingly enough the compiler actually turned this into a nested if-not statement.
 
-\[caption id="attachment\_937" align="aligncenter" width="300"\][![Small switch statement decompiled](images/b7a6b-smallswitchdecompiled.png)](https://dccoder.files.wordpress.com/2020/09/b7a6b-smallswitchdecompiled.png) Small switch statement decompiled\[/caption\]
+\[caption id="attachment\_937" align="aligncenter" width="300"\][![Small switch statement decompiled](b7a6b-smallswitchdecompiled.png)](https://dccoder.files.wordpress.com/2020/09/b7a6b-smallswitchdecompiled.png) Small switch statement decompiled\[/caption\]
 
  
 
@@ -43,19 +44,19 @@ After thinking about this I decided to make a much larger switch statement conta
 
  
 
-\[caption id="attachment\_939" align="aligncenter" width="399"\][![Large Switch Statement in C#](images/13724-largeswitch.png)](https://dccoder.files.wordpress.com/2020/09/13724-largeswitch.png) Large Switch Statement\[/caption\]
+\[caption id="attachment\_939" align="aligncenter" width="399"\][![Large Switch Statement in C#](13724-largeswitch.png)](https://dccoder.files.wordpress.com/2020/09/13724-largeswitch.png) Large Switch Statement\[/caption\]
 
 As you can see this is pretty much the same thing just with several more cases.  Usually one would expect this to perform in the same manner since you're still calling the same command.  But let's take a look at it under a decompiler.
 
  
 
-\[caption id="attachment\_948" align="aligncenter" width="434"\][![](images/0e039-largeswitchdecompiled.png)](https://dccoder.files.wordpress.com/2020/09/0e039-largeswitchdecompiled.png) Large switch decompiled\[/caption\]
+\[caption id="attachment\_948" align="aligncenter" width="434"\][![](0e039-largeswitchdecompiled.png)](https://dccoder.files.wordpress.com/2020/09/0e039-largeswitchdecompiled.png) Large switch decompiled\[/caption\]
 
 Well that's interesting.  Under the decompiler it looks like the same thing we passed in.  Let's try taking a look at the IL Code.
 
  
 
-\[caption id="attachment\_947" align="aligncenter" width="707"\][![](images/cf4ff-largeswitchilexplanation.png)](https://dccoder.files.wordpress.com/2020/09/cf4ff-largeswitchilexplanation.png) IL Code for a decompiled switch with many cases\[/caption\]
+\[caption id="attachment\_947" align="aligncenter" width="707"\][![](cf4ff-largeswitchilexplanation.png)](https://dccoder.files.wordpress.com/2020/09/cf4ff-largeswitchilexplanation.png) IL Code for a decompiled switch with many cases\[/caption\]
 
 Now we're getting somewhere!  Looking at the IL code we can see that each of the cases were actually hashed by the compiler, and it's actually calling ComputeHashString on the input.  This drastically improves lookup times because the hashing function is fast.  And with the hash in hand, it can lookup for the value in O(1) time.  This makes it much faster than having to continue to evaluate conditions as it would have to in a collection of if statements.
 
@@ -79,7 +80,7 @@ With everything put together I decided to give it a go and it worked!
 
 Once I proved that it could work I created a few programs.  One with a small switch, one with a larger one, and one that used a dictionary.  Once they were all up and running I decided to do some benchmarks.
 
-\[caption id="attachment\_959" align="aligncenter" width="352"\][![Switch Benchmarking Results](images/9940a-results.png)](https://dccoder.files.wordpress.com/2020/09/9940a-results.png) Benchmark Results\[/caption\]
+\[caption id="attachment\_959" align="aligncenter" width="352"\][![Switch Benchmarking Results](9940a-results.png)](https://dccoder.files.wordpress.com/2020/09/9940a-results.png) Benchmark Results\[/caption\]
 
 Needless to say I was fairly surprised.  While the dictionary switch was faster by 4ms (this number remained consistent) I believe some of that time could be due to class initialization among other things.
 
@@ -91,7 +92,7 @@ I decided to make this slightly more flexible by creating an interface and havin
 
  
 
-\[caption id="attachment\_960" align="aligncenter" width="462"\][![DictionarySwitchDataChecker](images/d1a3b-dictionaryswitchdatachecker.png)](https://dccoder.files.wordpress.com/2020/09/d1a3b-dictionaryswitchdatachecker.png) Data Checker showing use of interface\[/caption\]
+\[caption id="attachment\_960" align="aligncenter" width="462"\][![DictionarySwitchDataChecker](d1a3b-dictionaryswitchdatachecker.png)](https://dccoder.files.wordpress.com/2020/09/d1a3b-dictionaryswitchdatachecker.png) Data Checker showing use of interface\[/caption\]
 
  
 

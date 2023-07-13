@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Dangers of software"
 date: "2021-12-15"
 categories:
@@ -27,7 +28,7 @@ Many individual's, myself included, are calling this one of the largest and most
 
 Aparently Cisco's Talos security team has been observing exploits related to this since [December 2](https://blog.talosintelligence.com/2021/12/apache-log4j-rce-vulnerability.html) although the [earliest exploit found was 04:36:50 UTC on 12/1/2021](https://twitter.com/eastdakota/status/1469800951351427073).  Aparently the primary use for this exploit as seen in the wild has been to [install crypto-mining malware](https://isc.sans.edu/diary/rss/28124), and [add to botnets](https://blog.netlab.360.com/threat-alert-log4j-vulnerability-has-been-adopted-by-two-linux-botnets/).
 
-![](./images/cve-2021-44228-diagram-640x394.jpg)
+![](cve-2021-44228-diagram-640x394.jpg)
 
 Microsoft has published [guidance for preventing, detecting, and hunting for](https://www.microsoft.com/security/blog/2021/12/11/guidance-for-preventing-detecting-and-hunting-for-cve-2021-44228-log4j-2-exploitation/?ranMID=24542&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-AhasDh6Dim5RYVuATw6wVQ&epi=TnL5HPStwNw-AhasDh6Dim5RYVuATw6wVQ&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=%28ir__2ia36o2d6ckf6kc99qdkuluaeu2xosxtsetirzx200%29%287593%29%281243925%29%28TnL5HPStwNw-AhasDh6Dim5RYVuATw6wVQ%29%28%29&irclickid=_2ia36o2d6ckf6kc99qdkuluaeu2xosxtsetirzx200) the Log4j issue.
 

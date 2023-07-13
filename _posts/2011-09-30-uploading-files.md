@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Uploading Files"
 date: "2011-09-30"
 categories: 

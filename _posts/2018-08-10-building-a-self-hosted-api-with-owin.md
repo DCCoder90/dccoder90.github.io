@@ -1,4 +1,5 @@
 ---
+share: true
 title: "Building a self-hosted API with OWIN"
 date: "2018-08-10"
 categories: 
@@ -35,7 +36,7 @@ Maybe your company does some form of image or text processing and you want an AP
 
 Before we start coding, first we need to set up a few things.  Don't worry, this won't take long.   First let's open up and create a new console project using the .Net Framework!
 
-[![New Project](images/ee959-selfhostednewproject.png)](https://dccoder.files.wordpress.com/2020/09/ee959-selfhostednewproject.png)
+![New Project](/assets/img/posts/ee959-selfhostednewproject.png)
 
  
 
@@ -63,11 +64,22 @@ Now create a new class and call it "StartUp". This setup class is going to be wh
 
 ### Startup
 
-\[cc lang="csharp"\] using System.Web.Http; using Owin;
+```c#
 
-namespace SelfHosted{ public class Startup{ public void Configuration(IAppBuilder app){ // Configure Web API for self-host. var config = new HttpConfiguration(); config.Routes.MapHttpRoute( name: "DefaultApi", routeTemplate: "api/{controller}/{name}", defaults: new { name = RouteParameter.Optional } );
+using System.Web.Http; using Owin;
 
-app.UseWebApi(config); } } } \[/cc\]
+namespace SelfHosted{ 
+public class Startup{ 
+public void Configuration(IAppBuilder app){ 
+// Configure Web API for self-host
+var config = new HttpConfiguration(); 
+config.Routes.MapHttpRoute( name: "DefaultApi", routeTemplate: "api/{controller}/{name}", defaults: new { name = RouteParameter.Optional } );
+
+app.UseWebApi(config); 
+} 
+} 
+}
+```
 
 For those of you that have used MVC, this may look familiar to you. All we are doing is setting up the Config engine and identifying one route for our API. For most microAPIs this is all the routes you will need. Remember, the point of being micro is to stay small!
 
@@ -101,17 +113,17 @@ Well, now that we have everything programmed hit "Start" and let's see it in act
 
 Once you hit "Start" you should see a console popup that looks like this:
 
-[![Console Window](images/732f9-programrunning.png)](https://dccoder.files.wordpress.com/2020/09/732f9-programrunning.png)
+![Console Window](/assets/img/posts/732f9-programrunning.png)
 
 Yay! It's working! But this isn't very exciting. Let's open up a browser and navigate to where we have our API listening. I'm navigating to localhost:8080/api/Hello
 
-[![HelloWorld](images/2c00a-helloworld.png)](https://dccoder.files.wordpress.com/2020/09/2c00a-helloworld.png)
+![HelloWorld](/assets/img/posts/2c00a-helloworld.png)
 
  
 
 Look at that! It displays "Hello","World"! Just as we would have hoped! Now, let's get a little more fancy and add a "Name" onto the end of that. I'll put "DCCoder".
 
-[![Hello DCCoder](images/b0445-hellodccoder.png)](https://dccoder.files.wordpress.com/2020/09/b0445-hellodccoder.png)
+![Hello DCCoder](/assets/img/posts/b0445-hellodccoder.png)
 
                    
 
