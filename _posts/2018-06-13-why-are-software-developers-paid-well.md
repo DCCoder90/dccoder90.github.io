@@ -19,7 +19,7 @@ My coworkers and I have had many conversations about what our job actually is. I
 
 Even my own family seems shocked when they hear that I make a decent living sitting in front of a computer typing and in meeting rooms all day.  [A](https://dccoder.files.wordpress.com/2020/09/0c62b-payscale.png)ccording to [UsNews Money](https://money.usnews.com/careers/best-jobs/software-developer/salary), in 2016 the median salary for a software developer was $100,080 annually.
 
-![](images/0c62b-payscale.png)
+![](/assets/img/posts/0c62b-payscale.png)
 
  
 
