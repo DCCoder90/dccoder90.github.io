@@ -1,4 +1,5 @@
 ---
+share: true
 title: "The trouble with OpenSource"
 date: "2019-09-23"
 categories: 
@@ -11,7 +12,7 @@ tags:
   - "security"
 ---
 
-![](images/c35ff-opensource-400.png)
+![](c35ff-opensource-400.png)
 
 It's no secret that the world runs on open-source. From our Apache and NGinx webservers, our Ubuntu server OS's, even our .NET and python programming languages. However, how many think that this could potentially be an issue?
 
