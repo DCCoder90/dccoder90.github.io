@@ -1,4 +1,5 @@
 ---
+share: true
 title: "The cringe - Recruiters"
 date: "2019-10-02"
 categories: 
