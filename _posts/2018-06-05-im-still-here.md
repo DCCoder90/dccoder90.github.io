@@ -1,4 +1,5 @@
 ---
+share: true
 title: "I'm still here"
 date: "2018-06-05"
 categories: 
