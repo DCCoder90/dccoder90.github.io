@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the site in the jekyll/builder container
         run: |
-          cp "_posts/images" "assets/images"
+          cp -r "_posts/images" "assets/images"
           export JEKYLL_VERSION=3.8
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
