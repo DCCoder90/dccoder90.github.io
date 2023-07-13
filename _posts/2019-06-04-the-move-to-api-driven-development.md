@@ -1,4 +1,5 @@
 ---
+share: true
 title: "The move to API Driven Development"
 date: "2019-06-04"
 categories: 
@@ -11,7 +12,7 @@ tags:
 
 Throughout my time developing software I have seen many different architectures, but on some of my recent projects, there is one that stands above the rest. API Driven Development. I absolutely love this architecture and I'm sure most of you would too.
 
-![](images/ebbe3-whats-the-deal-with-software-architecture.jpg)
+![](ebbe3-whats-the-deal-with-software-architecture.jpg)
 
 ## What is API Driven Development?
 
@@ -25,7 +26,7 @@ This allows a standard method of accessing data for all platforms that the appli
 
 Recently many of my clients have been asking for mobile apps and websites that go along with them. For a project like this, APIDD is perfect! Let me start off by showing a diagram.
 
-![Common API DD Architecture](images/112cc-untitled-diagram.jpg)
+![Common API DD Architecture](112cc-untitled-diagram.jpg)
 
 Common API DD Architecture
 
