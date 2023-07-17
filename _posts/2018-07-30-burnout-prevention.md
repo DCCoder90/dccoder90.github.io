@@ -8,7 +8,6 @@ categories:
 tags: 
   - "burnout"
   - "development"
-  - "stress"
   - "work"
   - "worklifebalance"
 coverImage: "4a5a2-fig-30-07-2018_19-11-06.jpg"
