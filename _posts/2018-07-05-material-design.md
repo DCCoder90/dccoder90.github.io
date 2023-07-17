@@ -6,7 +6,6 @@ categories:
   - "design-and-best-practice"
 tags: 
   - "design"
-  - "google"
   - "material-design"
   - "ui"
   - "ux"

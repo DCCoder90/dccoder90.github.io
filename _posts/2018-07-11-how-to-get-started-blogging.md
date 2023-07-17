@@ -8,7 +8,6 @@ categories:
 tags: 
   - "blogging"
   - "career"
-  - "john-sonmez"
 coverImage: "5b277-fig-11-07-2018_13-31-16.jpg"
 ---
 
