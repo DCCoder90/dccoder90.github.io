@@ -17,7 +17,7 @@ coverImage: "clock.png"
 
 There are many aggravating things in programming. You have race conditions, thread locks, cache validation, and many others, but one thing can be one of the biggest headaches if not taken into account. Time. Handling time sounds like a fairly straight forward process, right? Get the current time, store it somewhere, and display it when you need to. If only it were that simple.
 
-![](378a5-download.jpg)
+![](../assets/img/posts/378a5-download.jpg)
 
 "We were in the right place at the right time, but unfortunately, we were in the wrong time zone."
 
