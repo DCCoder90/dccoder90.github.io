@@ -20,7 +20,7 @@ Say hello to C# 8.0 and goodbye to those nasty little null-reference exceptions!
 
 # Null references
 
-[![Brace Yourself, NullRef Exception incoming](8535e-brace-yourself-nullreferenceexception-incoming.jpg)](https://dccoder.files.wordpress.com/2020/09/8535e-brace-yourself-nullreferenceexception-incoming.jpg)
+[![Brace Yourself, NullRef Exception incoming](../assets/img/posts/8535e-brace-yourself-nullreferenceexception-incoming.jpg)](https://dccoder.files.wordpress.com/2020/09/8535e-brace-yourself-nullreferenceexception-incoming.jpg)
 
 Let's face it, we've all been there.  Everything compiles, we run our program eagerly awaiting it's output.  Then BAM!  A big nope screen is thrown in your face, saying something about a NullReferenceException.  Believe it or not Null References were suppose to be a thing of the past a long time ago.  Thankfully the C# designers have finally gotten around to trying to get rid of them.   Currently by default all reference types as well as variable types are nullable, this is all about to change.
 
