@@ -61,7 +61,7 @@ This is true in most places and tends to be the most common reasons that develop
 
 Breaking one monolithic function down into many smaller bits not only keeps you from dirtying up your code, but also greatly increases readability.  Take a look at the two methods below and see which one you find easier to understand:
 
-![](1eb89-badmethod-e1531164890435.png)![](aeea2-bettermethod-e1531164817633.png)
+![](../assets/img/posts/1eb89-badmethod-e1531164890435.png)![](../assets/img/posts/aeea2-bettermethod-e1531164817633.png)
 
 I'm sure now you're beginning to see the point and even agreeing.
 
