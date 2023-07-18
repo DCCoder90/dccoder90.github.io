@@ -309,7 +309,7 @@ I wound up only having to create a single page with the path /{componentName} wi
 
 Now with everything done the last thing is to fire it up, drop the components in and hope it all works as expected.
 
-![](2020-09-15_16-19-45.gif)
+![](../assets/img/posts/2020-09-15_16-19-45.gif)
 
 _Sorry for it being blurry, but it still gets the point across_
 
