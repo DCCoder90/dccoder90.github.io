@@ -6,7 +6,7 @@ categories:
   - "personal"
 ---
 
-So yet again I have moved my site.  I spent right at a year hosting everything with Wordpress, but now here we are on [Github Pages](https://pages.github.com/).  This move was probably a long time coming, but I finally bit the bullet.  Even though [when I switched to Wordpress](2020-09-04-moving-time.md) it was primarily due to the simplicity of the platform and due to it being a little cheaper, this time it's really due to practicality.  
+So yet again I have moved my site.  I spent right at a year hosting everything with Wordpress, but now here we are on [Github Pages](https://pages.github.com/).  This move was probably a long time coming, but I finally bit the bullet.  Even though [when I switched to Wordpress](./2020-09-04-moving-time.md#) it was primarily due to the simplicity of the platform and due to it being a little cheaper, this time it's really due to practicality.  
 
 For the past 4-5 months I've been using [Joplin](https://joplinapp.org/) for both my personal and my development diary, on top of that I write a LOT of documentation that is displayed in GitHub for work, so it's clear to say that markdown is my primary writing format these days.   
 
