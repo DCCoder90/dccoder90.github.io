@@ -1,0 +1,36 @@
+@use "sass:map";
+@import "palette";
+//keywords
+.k {
+  color: map.get($theme-colors, "keywords");
+}
+
+//Constant keywords
+.kc {
+  color: map.get($theme-colors, "keywords");
+}
+
+//Variable declarations (var)
+.kd {
+  color: map.get($theme-colors, "types");
+}
+
+//Namespace declarations
+.kn {
+
+}
+
+//Psuedo keywords
+.kp {
+  color: map.get($theme-colors, "keywords");
+}
+
+//Reserved (end)
+.kr {
+  color: map.get($theme-colors, "keywords");
+}
+
+//Type keywords (int)
+.kt {
+  color: map.get($theme-colors, "types");
+}

@@ -20,7 +20,10 @@ bundle install
 ```
 ### Running
 
-```bundle exec jekyll serve```
+```
+docker run --rm -it -v `pwd`\assets:/work:rw -w /work apluslms/develop-sass sass /work/sass/highlight.scss /work/css/highlight.css
+bundle exec jekyll serve
+```
 
 
 

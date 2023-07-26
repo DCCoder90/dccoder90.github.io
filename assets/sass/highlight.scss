@@ -1,0 +1,97 @@
+@use "sass:map";
+@import 'palette';
+
+.language-cpp{
+  background-color: #0c1014;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+  span {
+    //Whitespace
+    .w {
+
+    }
+    //Lexer errors
+    .err {
+      color: $Red;
+    }
+    //Unmatched
+    .x {
+      color: map.get($theme-colors, "other");
+    }
+
+    @import 'k-tokens';
+    @import 'n-tokens';
+    @import 's-tokens';
+    @import 'g-tokens';
+    @import 'c-tokens';
+
+    //Psuedo names (self)
+    .bp {
+
+    }
+    //Class variables
+    .vc{
+      color: map.get($theme-colors, "variable-names");
+    }
+    //Global variables
+    .vg{
+      color: map.get($theme-colors, "variable-names");
+    }
+    //Instance variables
+    .vi{
+      color: map.get($theme-colors, "variable-names");
+    }
+    //Literal
+    .l{
+      color: map.get($theme-colors, "literals");
+    }
+    //Date literals
+    .ld{
+      color: map.get($theme-colors, "literals");
+    }
+    //Any number literal
+    .m{
+      color: map.get($theme-colors, "literals");
+    }
+    //Floats
+    .mf{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Hex numbers
+    .mh{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Integers
+    .mi{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Longs
+    .il{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Octal literals
+    .mo{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Hex literals
+    .mx{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Binary literals
+    .mb{
+      color: map.get($theme-colors, "numbers");
+    }
+    //Operators
+    .o{
+      color: map.get($theme-colors, "operators");
+    }
+    //Word operators
+    .ow{
+      color: map.get($theme-colors, "operators");
+    }
+    //Punctuation
+    .p{
+      color: map.get($theme-colors, "punctuation");
+    }
+  }
+}
