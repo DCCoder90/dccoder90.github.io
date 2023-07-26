@@ -1,4 +1,5 @@
 @use "sass:map";
+@import "palette";
 //Single line comment
 .c{
   color: map.get($theme-colors, "comments");
