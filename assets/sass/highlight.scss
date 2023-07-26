@@ -1,3 +1,4 @@
+@use "sass:map";
 @import 'palette';
 
 .language-cpp{
@@ -11,11 +12,11 @@
     }
     //Lexer errors
     .err {
-
+      color: $Red;
     }
     //Unmatched
     .x {
-
+      color: map.get($theme-colors, "other");
     }
 
     @import 'k-tokens';
@@ -30,68 +31,67 @@
     }
     //Class variables
     .vc{
-      color: $Cyan;
+      color: map.get($theme-colors, "variable-names");
     }
     //Global variables
     .vg{
-      color: $Cyan;
+      color: map.get($theme-colors, "variable-names");
     }
     //Instance variables
     .vi{
-      color: $Cyan;
+      color: map.get($theme-colors, "variable-names");
     }
     //Literal
     .l{
-      color: $Cyan;
+      color: map.get($theme-colors, "literals");
     }
     //Date literals
     .ld{
-      color: $Cyan;
+      color: map.get($theme-colors, "literals");
     }
-
     //Any number literal
     .m{
-      color: $Cyan;
+      color: map.get($theme-colors, "literals");
     }
     //Floats
     .mf{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Hex numbers
     .mh{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Integers
     .mi{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Longs
     .il{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Octal literals
     .mo{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Hex literals
     .mx{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Binary literals
     .mb{
-      color: $Cyan;
+      color: map.get($theme-colors, "numbers");
     }
     //Operators
     .o{
-      color: $Red;
+      color: map.get($theme-colors, "operators");
     }
     //Word operators
     .ow{
-      color: $Cyan;
+      color: map.get($theme-colors, "operators");
     }
     //Punctuation
     .p{
-      color: $Blue;
+      color: map.get($theme-colors, "punctuation");
     }
   }
 }

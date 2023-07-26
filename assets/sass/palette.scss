@@ -4,3 +4,15 @@ $Red: #C23127;
 $Base: #0c1014;
 $Green: #26A98B;
 $Blue: #195465;
+
+$theme-colors:(
+        "literals": $Cyan,
+        "function-names": $Red,
+        "variable-names": $Cyan,
+        "numbers": $Cyan,
+        "operators": $Cyan,
+        "punctuation": $Cyan,
+        "types": $Cyan,
+        "keywords": $Cyan,
+        "other": $Cyan
+)

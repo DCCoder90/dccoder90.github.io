@@ -1,16 +1,17 @@
+@use "sass:map";
 //keywords
 .k {
-  color: $Cyan;
+  color: map.get($theme-colors, "keywords");
 }
 
 //Constant keywords
 .kc {
-  color: $Cyan;
+  color: map.get($theme-colors, "keywords");
 }
 
 //Variable declarations (var)
 .kd {
-  color: $Cyan;
+  color: map.get($theme-colors, "types");
 }
 
 //Namespace declarations
@@ -20,17 +21,15 @@
 
 //Psuedo keywords
 .kp {
-  color: $Cyan;
+  color: map.get($theme-colors, "keywords");
 }
 
 //Reserved (end)
 .kr {
-  color: $Cyan;
-
+  color: map.get($theme-colors, "keywords");
 }
 
 //Type keywords (int)
 .kt {
-  color: $Cyan;
-
+  color: map.get($theme-colors, "types");
 }
