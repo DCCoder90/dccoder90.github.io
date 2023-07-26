@@ -1,20 +1,29 @@
-$Orange: #D26937;
-$Cyan: #33859E;
-$Red: #C23127;
+$Orange: #b3785d;
+$Cyan: #56adb7;
+$Red: #b15e7c;
 $Base: #0c1014;
-$Green: #26A98B;
-$Blue: #195465;
+$Green: #709d6c;
+$Blue: #608cc3;
 $Grey: #565656;
+$Grey1: #1b202a;
+$Grey2: #232936;
+$Grey3: #323c4d;
+$Grey4: #51617d;
+$Grey5: #9aa7bd;
+$Yellow: #b5a262;
+$Purple: #8f72bf;
+$Pink: #c47ebd;
+
 
 $theme-colors:(
         "literals": $Cyan,
-        "function-names": $Red,
+        "function-names": $Yellow,
         "variable-names": $Cyan,
-        "numbers": $Cyan,
+        "numbers": $Red,
         "operators": $Cyan,
-        "punctuation": $Cyan,
-        "types": $Cyan,
+        "punctuation": $Blue,
+        "types": $Orange,
         "keywords": $Cyan,
-        "comments": $Grey,
+        "comments": $Grey4,
         "other": $Cyan
 )
