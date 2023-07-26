@@ -1,21 +1,21 @@
-
+@use "sass:map";
 //Single line comment
 .c{
-
+  color: map.get($theme-colors, "comments");
 }
 //Multiline comment
 .cm{
-
+  color: map.get($theme-colors, "comments");
 }
 //Preprocessor comment
 .cp{
-
+  color: map.get($theme-colors, "comments");
 }
 //Comments that end at end of line
 .c1{
-
+  color: map.get($theme-colors, "comments");
 }
 //Special data in comments
 .cs{
-
+  color: map.get($theme-colors, "comments");
 }

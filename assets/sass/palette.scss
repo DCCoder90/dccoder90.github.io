@@ -4,6 +4,7 @@ $Red: #C23127;
 $Base: #0c1014;
 $Green: #26A98B;
 $Blue: #195465;
+$Grey: #565656;
 
 $theme-colors:(
         "literals": $Cyan,
@@ -14,5 +15,6 @@ $theme-colors:(
         "punctuation": $Cyan,
         "types": $Cyan,
         "keywords": $Cyan,
+        "comments": $Grey,
         "other": $Cyan
 )
