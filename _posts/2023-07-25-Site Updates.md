@@ -14,6 +14,8 @@ A funny side note, if you google `[cc lang="c-sharp` the majority of the results
 
 So I figured I'd go back and try to update some of my old posts.  Some of the pictures that are gone in those posts are just lost to time, but I'll do my best to try and locate them, mostly I just wanted to improve readability of those old posts for posterity's sake.  I'm also going to be going through and trying to find any dead links and get them fixed back up.
 
+I would also like to add that I am well aware that my code highlighting is kind of broken at the moment on here, I plan on fixing that at some point this week.  First is to decide on a color scheme, though Ethan Schoonover's [Solarized](https://ethanschoonover.com/solarized/) is looking nice.
+
 ## Update on dEngine
 
 For those keeping track, I haven't given up on dEngine just yet.  Things have been busy both at work and home so pretty much just waiting for a lull in life so that I can jump back on it.  
