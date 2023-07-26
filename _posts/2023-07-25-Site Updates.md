@@ -29,7 +29,7 @@ On another note I played around with Shaders a little the other day, and that wa
 * [(984) An introduction to Shader Art Coding - YouTube](https://www.youtube.com/watch?v=f4s1h2YETNY)
 * [An introduction to Shader Art Coding - YouTube](https://www.youtube.com/watch?v=f4s1h2YETNY)
 
-```python
+```glsl
 vec3 palette( float t ) {
     vec3 a = vec3(0.218,0.5,1.278);
     vec3 b = vec3(0.588,0.418,0.5);
