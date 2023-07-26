@@ -1,4 +1,5 @@
 @use "sass:map";
+@import "palette";
 //keywords
 .k {
   color: map.get($theme-colors, "keywords");
