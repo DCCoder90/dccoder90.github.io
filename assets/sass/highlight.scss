@@ -1,0 +1,97 @@
+@import 'palette';
+
+.language-cpp{
+  background-color: #0c1014;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+  span {
+    //Whitespace
+    .w {
+
+    }
+    //Lexer errors
+    .err {
+
+    }
+    //Unmatched
+    .x {
+
+    }
+
+    @import 'k-tokens';
+    @import 'n-tokens';
+    @import 's-tokens';
+    @import 'g-tokens';
+    @import 'c-tokens';
+
+    //Psuedo names (self)
+    .bp {
+
+    }
+    //Class variables
+    .vc{
+      color: $Cyan;
+    }
+    //Global variables
+    .vg{
+      color: $Cyan;
+    }
+    //Instance variables
+    .vi{
+      color: $Cyan;
+    }
+    //Literal
+    .l{
+      color: $Cyan;
+    }
+    //Date literals
+    .ld{
+      color: $Cyan;
+    }
+
+    //Any number literal
+    .m{
+      color: $Cyan;
+    }
+    //Floats
+    .mf{
+      color: $Cyan;
+    }
+    //Hex numbers
+    .mh{
+      color: $Cyan;
+    }
+    //Integers
+    .mi{
+      color: $Cyan;
+    }
+    //Longs
+    .il{
+      color: $Cyan;
+    }
+    //Octal literals
+    .mo{
+      color: $Cyan;
+    }
+    //Hex literals
+    .mx{
+      color: $Cyan;
+    }
+    //Binary literals
+    .mb{
+      color: $Cyan;
+    }
+    //Operators
+    .o{
+      color: $Red;
+    }
+    //Word operators
+    .ow{
+      color: $Cyan;
+    }
+    //Punctuation
+    .p{
+      color: $Blue;
+    }
+  }
+}
