@@ -13,3 +13,4 @@ Gemfile.lock
 beautiful-jekyll-theme-*.gem
 assets/sass/*.css
 assets/sass/*.map
+assets/css/highlight.*
