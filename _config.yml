@@ -9,7 +9,7 @@ navbar-links:
   Home: "index"
   About Me: "aboutme"
   dEngine: "dengine/index.html"
-
+  Resume: "resume"
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
