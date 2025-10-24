@@ -18,6 +18,8 @@ The trouble, which kicked off around 3:11 AM ET, caused a world of financial pai
 
 It’s easy to hop on LinkedIn and point fingers, but let's be honest, the blame game doesn't help anyone. The real value is in the post-mortem. We need to dig into the cascade of failures to understand how one localized problem could boil up into a global meltdown.
 
+**UPDATE (10/24/25):** AWS has since released their full post-mortem which can be found [here](https://aws.amazon.com/message/101925/).
+
 ### The Domino Effect
 
 So, how did one networking hiccup spiral completely out of control? It turns out, it all came down to central dependencies.
