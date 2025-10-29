@@ -23,8 +23,6 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           About
         </a>
       </li>
-      {
-        hasProjects && (
           <li>
             <a
               href="/projects"
@@ -33,26 +31,13 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               Projects
             </a>
           </li>
-        )
-      }
-      {
-        hasExperience && (
+
           <li>
             <a
               href="/resume"
               class="text-gray-700 hover:text-black transition-colors font-medium"
             >
-              Experience
-            </a>
-          </li>
-        )
-      }
-          <li>
-            <a
-              href="/blog"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Blog
+              Resume
             </a>
           </li>
     </ul>
