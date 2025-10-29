@@ -1,0 +1,32 @@
+---
+import { siteConfig } from "../config";
+import Navigation from "../components/Navigation.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300 h-16"
+>
+  <div class="max-w-7xl mx-auto px-8 flex items-center justify-between h-full">
+    <Navigation />
+    <ThemeIcon />
+  </div>
+</header>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (window.scrollY > 100) {
+      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+    } else {
+      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+    }
+  });
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

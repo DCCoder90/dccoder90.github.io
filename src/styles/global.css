@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .menu {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: #0d0950;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
+.dark a {
+  color: #ff9776;
+}
