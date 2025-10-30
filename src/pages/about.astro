@@ -1,59 +1,73 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
-import "../styles/global.css";
+const pageTitle = "About";
 ---
 <BaseLayout pageTitle={pageTitle}>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
-            
-            <div class="p-6 sm:p-10">
-                <h1 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 dark:text-white">
-                    Hi, I'm DCCoder!
-                    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40" class="inline-block align-middle -mt-2">
-                </h1>
+        <div class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
+                Hi, I'm DCCoder!
+                <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40" class="inline-block align-middle -mt-2" alt="Wave">
+            </h1>
 
-                <div class="flex justify-center my-6">
-                    <a href="https://github.com/DCCoder90/readme-typing-svg">
-                        <img src="https://readme-typing-svg.herokuapp.com?lines=Code%20lover%20|%20Cloud%20Enthusiast;Always%20in%20beta|Ever%20Learning&center=true&width=380&height=45" alt="Code lover | Cloud Enthusiast; Always in beta | Ever Learning" class="h-11 sm:h-12 w-auto">
+            <div class="flex justify-center my-8">
+                <a href="https://github.com/DCCoder90/readme-typing-svg" target="_blank" rel="noopener noreferrer">
+                    <img src="https://readme-typing-svg.herokuapp.com?lines=Code%20lover%20|%20Cloud%20Enthusiast;Always%20in%20beta|Ever%20Learning&center=true&width=380&height=45" alt="Code lover | Cloud Enthusiast; Always in beta | Ever Learning" class="h-11 sm:h-12 w-auto">
+                </a>
+            </div>
+        </div>
+
+        <div class="space-y-12">
+
+            <section class="bg-white dark:bg-[#262626] rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm p-8 md:p-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-neutral-100">About Me</h2>
+                </div>
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-neutral-300">
+                    My name is Ernest Mallett. I am a Principal Engineer working at <a href="https://beta.elsevier.com/?trial=true" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#0969da] dark:text-teal-400 hover:text-[#0550ae] dark:hover:text-teal-300 transition-colors underline decoration-2 underline-offset-2">Elsevier</a> in the <a href="https://www.ariessys.com/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#0969da] dark:text-teal-400 hover:text-[#0550ae] dark:hover:text-teal-300 transition-colors underline decoration-2 underline-offset-2">Aries</a> department. Formerly I have been a C# development instructor, Lead Developer, Team Lead, Sr. Engineer, and held other positions with other companies. I have been programming since I was 8 years old, starting with Basic and working my way up. My first love was PHP, developing websites and data collection interfaces.
+                </p>
+            </section>
+
+            <section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- StackOverflow Badge -->
+                    <a href="https://stackoverflow.com/users/8333554/dccoder" target="_blank" rel="noopener noreferrer" class="group relative block rounded-xl overflow-hidden border-2 border-gray-200 dark:border-neutral-700 hover:border-[#0969da] dark:hover:border-teal-400 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#0969da]/5 to-transparent dark:from-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img src="https://stackoverflow-badge.vercel.app/?userID=8333554" alt="DCCoder StackOverflow Stats" class="w-full h-full object-cover relative">
+                    </a>
+                    <!-- GitHub Streak -->
+                    <a href="https://github.com/DCCoder90/github-readme-streak-stats" target="_blank" rel="noopener noreferrer" class="group relative block rounded-xl overflow-hidden border-2 border-gray-200 dark:border-neutral-700 hover:border-[#0969da] dark:hover:border-teal-400 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#0969da]/5 to-transparent dark:from-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="DCCoder's streak" src="https://github-readme-streak-stats.herokuapp.com/?user=dccoder90&theme=monokai-metallian&hide_border=true" class="w-full h-full object-cover relative">
                     </a>
                 </div>
-            </div>
+            </section>
 
-            <hr class="border-gray-200 dark:border-gray-700">
-
-            <div class="p-6 sm:p-10">
-
-                <section class="mb-10">
-                    <h2 class="text-3xl font-semibold mb-5 text-indigo-600 dark:text-indigo-400">About Me</h2>
-                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                        My name is Ernest Mallett. I am a Principal Engineer working at <a href="https://beta.elsevier.com/?trial=true" target="_blank" rel="noopener noreferrer" class="font-medium text-indigo-500 hover:underline">Elsevier</a> in the <a href="https://www.ariessys.com/" target="_blank" rel="noopener noreferrer" class="font-medium text-indigo-500 hover:underline">Aries</a> department. Formerly I have been a C# development instructor, Lead Developer, Team Lead, Sr. Engineer, and held other positions with other companies. I have been programming since I was 8 years old, starting with Basic and working my way up. My first love was PHP, developing websites and data collection interfaces.
-                    </p>
-                </section>
-
-                <section class="mb-10">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- StackOverflow Badge -->
-                        <a href="https://stackoverflow.com/users/8333554/dccoder" target="_blank" rel="noopener noreferrer" class="block rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
-                            <img src="https://stackoverflow-badge.vercel.app/?userID=8333554" alt="DCCoder StackOverflow Stats" class="w-full h-full object-cover">
-                        </a>
-                        <!-- GitHub Streak -->
-                        <a href="https://github.com/DCCoder90/github-readme-streak-stats" target="_blank" rel="noopener noreferrer" class="block rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
-                            <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="DCCoder's streak" src="https://github-readme-streak-stats.herokuapp.com/?user=dccoder90&theme=monokai-metallian&hide_border=true" class="w-full h-full object-cover">
-                        </a>
+            <section class="bg-white dark:bg-[#262626] rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm p-8 md:p-10">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
                     </div>
-                </section>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-neutral-100">My Toolkit</h2>
+                </div>
 
-                <section>
-                    <h2 class="text-3xl font-semibold mb-6 text-indigo-600 dark:text-indigo-400">My Toolkit</h2>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">👨‍💻 Programming Languages</h3>
-                            <div class="flex flex-wrap gap-2">
+                <div class="space-y-10">
+                    <!-- Programming Languages -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-neutral-200 flex items-center gap-2">
+                            <span class="text-2xl">👨‍💻</span>
+                            Programming Languages
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
                                 <a href="https://github.com/search?q=user%3ADCCoder90+language%3Abash"><img alt="Bash" src="https://img.shields.io/badge/Bash-121011.svg?logo=gnu-bash&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="https://github.com/search?q=user%3ADCCoder90+language%3Acplusplus"><img alt="C++" src="https://img.shields.io/badge/C++-121011.svg?logo=cplusplus&logoColor=blue" class="transition-transform hover:scale-110"></a>
                                 <a href="https://github.com/search?q=user%3ADCCoder90+language%3Acsharp"><img alt="C#" src="https://img.shields.io/badge/C%23-239120.svg?logo=c-sharp&logoColor=white" class="transition-transform hover:scale-110"></a>
@@ -74,9 +88,13 @@ import "../styles/global.css";
                             </div>
                         </div>
 
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🧰 Frameworks and Libraries</h3>
-                            <div class="flex flex-wrap gap-2">
+                    <!-- Frameworks and Libraries -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-neutral-200 flex items-center gap-2">
+                            <span class="text-2xl">🧰</span>
+                            Frameworks and Libraries
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
                                 <a href="#"><img alt="Arduino" src="https://img.shields.io/badge/-Arduino-00979D?logo=Arduino&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="#"><img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3.svg?logo=bootstrap&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="#"><img alt="GitHub Actions" src="https://img.shields.io/badge/Blazor-2671E5.svg?logo=.net&logoColor=white" class="transition-transform hover:scale-110"></a>
@@ -94,9 +112,13 @@ import "../styles/global.css";
                             </div>
                         </div>
 
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">🗄️ Databases and Cloud Hosting</h3>
-                            <div class="flex flex-wrap gap-2">
+                    <!-- Databases and Cloud Hosting -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-neutral-200 flex items-center gap-2">
+                            <span class="text-2xl">🗄️</span>
+                            Databases and Cloud Hosting
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
                                 <a href="#"><img alt="AWS" src="https://img.shields.io/badge/AWS-FF6C37?logo=amazon-aws&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="#"><img alt="Azure" src="https://img.shields.io/badge/Azure-00f.svg?logo=microsoft-azure&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="#"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-327FC7.svg?logo=github&logoColor=white" class="transition-transform hover:scale-110"></a>
@@ -109,9 +131,13 @@ import "../styles/global.css";
                             </div>
                         </div>
 
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">💻 Software and Tools</h3>
-                            <div class="flex flex-wrap gap-2">
+                    <!-- Software and Tools -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-neutral-200 flex items-center gap-2">
+                            <span class="text-2xl">💻</span>
+                            Software and Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
                                 <a href="https://www.adobe.com/"><img alt="Adobe" src="https://img.shields.io/badge/Adobe-FF0000.svg?logo=adobe&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="https://developer.android.com/studio"><img alt="Android Studio" src="https://img.shields.io/badge/Android%20Studio-008678.svg?logo=android-studio&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="https://www.android.com/"><img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white" class="transition-transform hover:scale-110"></a>
@@ -127,10 +153,11 @@ import "../styles/global.css";
                                 <a href="https://www.stackoverflow.com"><img alt="Stack Overflow" src="https://img.shields.io/badge/-Stack%20Overflow-FE7A16?logo=stack-overflow&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white" class="transition-transform hover:scale-110"></a>
                                 <a href="https://www.jetbrains.com/"><img alt="Jetbrains" src="https://img.shields.io/badge/Jetbrains-121011.svg?logo=jetbrains&logoColor=white" class="transition-transform hover:scale-110"></a>
-                            </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
         </div>
+    </div>
 </BaseLayout>

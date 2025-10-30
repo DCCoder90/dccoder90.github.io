@@ -15,14 +15,31 @@ import ThemeIcon from "./ThemeIcon.astro";
 </header>
 
 <script>
-  window.addEventListener("scroll", () => {
+  function updateHeaderBackground() {
     const header = document.getElementById("header");
+    const isDark = document.documentElement.classList.contains('dark');
+
     if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+      if (isDark) {
+        header?.classList.add("bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#404040]");
+        header?.classList.remove("bg-white/95", "border-[#d0d7de]");
+      } else {
+        header?.classList.add("bg-white/95", "backdrop-blur-sm", "border-b", "border-[#d0d7de]");
+        header?.classList.remove("bg-[#1a1a1a]/95", "border-[#404040]");
+      }
     } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+      header?.classList.remove("bg-white/95", "bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#d0d7de]", "border-[#404040]");
     }
-  });
+  }
+
+  window.addEventListener("scroll", updateHeaderBackground);
+
+  // Update on theme change
+  const observer = new MutationObserver(updateHeaderBackground);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  // Initial check
+  updateHeaderBackground();
 </script>
 
 <style>
