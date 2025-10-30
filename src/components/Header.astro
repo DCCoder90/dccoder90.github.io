@@ -1,0 +1,49 @@
+---
+import { siteConfig } from "../config";
+import Navigation from "../components/Navigation.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300 h-16"
+>
+  <div class="max-w-7xl mx-auto px-8 flex items-center justify-between h-full">
+    <Navigation />
+    <ThemeIcon />
+  </div>
+</header>
+
+<script>
+  function updateHeaderBackground() {
+    const header = document.getElementById("header");
+    const isDark = document.documentElement.classList.contains('dark');
+
+    if (window.scrollY > 100) {
+      if (isDark) {
+        header?.classList.add("bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#404040]");
+        header?.classList.remove("bg-white/95", "border-[#d0d7de]");
+      } else {
+        header?.classList.add("bg-white/95", "backdrop-blur-sm", "border-b", "border-[#d0d7de]");
+        header?.classList.remove("bg-[#1a1a1a]/95", "border-[#404040]");
+      }
+    } else {
+      header?.classList.remove("bg-white/95", "bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#d0d7de]", "border-[#404040]");
+    }
+  }
+
+  window.addEventListener("scroll", updateHeaderBackground);
+
+  // Update on theme change
+  const observer = new MutationObserver(updateHeaderBackground);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  // Initial check
+  updateHeaderBackground();
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
