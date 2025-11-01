@@ -1,11 +1,23 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { siteConfig } from '../config';
 
 export async function GET(context) {
+  const posts = import.meta.glob('./posts/**/*.md', { eager: true });
+
+  const sortedPosts = Object.values(posts)
+    .map(post => ({
+      title: post.frontmatter.title,
+      description: post.frontmatter.description || post.frontmatter.excerpt || '',
+      pubDate: new Date(post.frontmatter.date),
+      link: post.frontmatter.permalink || post.url,
+    }))
+    .sort((a, b) => b.pubDate - a.pubDate);
+
   return rss({
-    title: 'Astro Learner | Blog',
-    description: 'My journey learning Astro',
+    title: `${siteConfig.name} | Blog`,
+    description: `${siteConfig.name} blog posts and articles.`,
     site: context.site,
-    items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
+    items: sortedPosts,
     customData: `<language>en-us</language>`,
   });
 }
