@@ -6,9 +6,9 @@ import { siteConfig } from "../config.ts";
 import Hero from "../components/Hero.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await Astro.glob("./posts/*.md");
+  const allPosts = await Astro.glob("./posts/**/*.md");
   const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
-  
+
   return paginate(sortedPosts, { pageSize: siteConfig.postsPerPage });
 }
 
