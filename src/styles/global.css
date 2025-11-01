@@ -32,17 +32,18 @@ html.dark {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.6;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.3;
   font-weight: 600; 
   color: var(--text-primary);
 }
+
+
+
 
 a {
   color: var(--accent-primary);
@@ -53,7 +54,7 @@ a:hover {
   color: var(--accent-hover);
 }
 
-
+/* Shiki syntax highlighting variables */
 @layer base {
   :root,
   html[data-theme='dark'] pre:has(code),
@@ -75,6 +76,7 @@ a:hover {
   }
 }
 
+/* Code block styling with line numbers */
 pre {
 	@apply rounded-md pl-8;
 }
@@ -95,4 +97,37 @@ pre code .line::before {
 	@apply absolute overflow-hidden w-7 h-4 -left-9 top-0 text-right;
 	content: counter(step);
 	counter-increment: step;
+}
+
+/*Styling for blog posts*/
+
+
+
+div.article h1 {
+  font-size: 2.25em;
+}
+
+div.article h2 {
+  font-size: 1.75em;
+}
+
+div.article h3 {
+  font-size: 1.5em;
+}
+
+div.article h4 {
+  font-size: 1.25em;
+}
+
+div.article h5 {
+  font-size: 1.1em;
+}
+
+div.article h6 {
+  font-size: 1em;
+}
+
+div.article p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
