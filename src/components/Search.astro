@@ -84,6 +84,18 @@ const searchIndex = [...postIndex, ...projectIndex];
       </div>
     </div>
   </div>
+
+  <!-- Hidden div to ensure Tailwind includes all dynamic classes in build -->
+  <div class="hidden">
+    <span class="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300"></span>
+    <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"></span>
+    <span class="text-gray-600 dark:text-neutral-400"></span>
+    <span class="text-gray-500 dark:text-neutral-500"></span>
+    <span class="text-gray-900 dark:text-neutral-100"></span>
+    <span class="text-gray-300 dark:text-neutral-600"></span>
+    <span class="hover:bg-gray-50 dark:hover:bg-neutral-800"></span>
+    <span class="border-gray-100 dark:border-neutral-800"></span>
+  </div>
 </div>
 
 <script define:vars={{ searchIndex }}>
@@ -162,8 +174,8 @@ const searchIndex = [...postIndex, ...projectIndex];
 
       // Type badge
       const typeBadge = isProject
-        ? '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Project</span>'
-        : '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Post</span>';
+        ? '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300">Project</span>'
+        : '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">Post</span>';
 
       return `
         <a href="${item.url}" class="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors border-b border-gray-100 dark:border-neutral-800 last:border-0" ${isProject ? 'target="_blank" rel="noopener noreferrer"' : ''}>
