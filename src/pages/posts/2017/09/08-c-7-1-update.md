@@ -66,13 +66,25 @@ int i = default;
 ## Returning methods
 
 ```csharp
-public int addIfTrue(int a, int b, bool shouldAdd){ if(shouldAdd){ return a+b; }else{ return default; } }
+public int addIfTrue(int a, int b, bool shouldAdd){ 
+  if(shouldAdd){ 
+    return a+b; 
+  }else{ 
+    return default; 
+  } 
+}
 ```
 
 ## Optional Parameters
 
 ```csharp
-public int addIfTrue(int a,int b,bool shouldAdd=default){ if(shouldAdd){ return a+b; }else{ return default; } }
+public int addIfTrue(int a,int b,bool shouldAdd=default){ 
+  if(shouldAdd){ 
+    return a+b; 
+  }else{ 
+      return default; 
+  } 
+}
 ```
 
  
@@ -85,10 +97,16 @@ Usually when a tuple is initialized  the variables you want to assign to the el
 
 [Tuples are new to C# with the 7.0 release](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7).  If you haven't used them yet I highly suggest it!
 
-Example: ```csharp
-int hp= 100; string playername = "DCCoder"; var details = (playername,hp);
+Example: 
+```csharp
+int hp= 100; 
+string playername = "DCCoder"; 
+var details = (playername,hp);
 ```
 
-As you can see this is much easier and faster than the old way of initializing tuples and having to specify every little thing. ```csharp
-int hp= 100; string playername = "DCCoder"; var details = (playername: playername,hp: hp);
+As you can see this is much easier and faster than the old way of initializing tuples and having to specify every little thing. 
+```csharp
+int hp= 100; 
+string playername = "DCCoder"; 
+var details = (playername: playername,hp: hp);
 ```
