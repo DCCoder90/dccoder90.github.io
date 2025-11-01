@@ -3,17 +3,17 @@
 @custom-variant dark (:root.dark &);
 
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f6f8fa;
-  --bg-accent: #f6f8fa;
-  --text-primary: #1f2937;
-  --text-secondary: #374151;
-  --text-tertiary: #4b5563;
-  --accent-primary: #0969da;
-  --accent-hover: #0550ae;
-  --accent-light: #218bff;
-  --border-color: #d0d7de;
-  --border-light: #d8dee4;
+  --bg-primary: #f9fafb; /* Slightly off-white */
+  --bg-secondary: #f3f4f6; /* Very light gray */
+  --bg-accent: #e5e7eb; /* Slightly darker light gray */
+  --text-primary: #1a202c; /* Dark charcoal */
+  --text-secondary: #4a5568; /* Slightly lighter gray */
+  --text-tertiary: #718096; /* Medium gray */
+  --accent-primary: #3b82f6; /* Professional blue */
+  --accent-hover: #2563eb; /* Darker blue for hover */
+  --accent-light: #60a5fa; /* Lighter blue for subtle accents */
+  --border-color: #d1d5db; /* Light gray for borders */
+  --border-light: #e5e7eb; /* Very light gray for subtle borders */
 }
 
 html.dark {
