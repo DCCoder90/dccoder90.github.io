@@ -1,6 +1,4 @@
 ---
-import MarkdownPostLayout from '../layouts/MarkdownPostLayout.astro';
-
 export async function getStaticPaths() {
   // Get all posts
   const posts = await Astro.glob('./posts/**/*.md');
@@ -21,18 +19,13 @@ export async function getStaticPaths() {
     return {
       params: { permalink: cleanPermalink },
       props: {
-        post,
-        frontmatter: post.frontmatter,
         Content: post.Content,
-        compiledContent: post.compiledContent
       },
     };
-  }).filter(Boolean); 
+  }).filter(Boolean);
 }
 
-const { post, frontmatter, Content } = Astro.props;
+const { Content } = Astro.props;
 ---
 
-<MarkdownPostLayout frontmatter={frontmatter}>
-  <Content />
-</MarkdownPostLayout>
+<Content />
