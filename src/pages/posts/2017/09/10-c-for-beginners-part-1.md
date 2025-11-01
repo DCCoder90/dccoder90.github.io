@@ -9,7 +9,7 @@ tags:
   - "beginners"
   - "c"
   - "tutorial"
-headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
+headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.webp"
 ---
 
 Ok so yesterday I received a request to do a C# tutorial covering the basics of the C# language. This will be a short multi-part tutorial on the basics of C#. In Part 1 we're going to cover some basic structure and syntax.  I do not intend to get too in-depth but cover just enough to allow others to be able to start writing simple programs and get comfortable with the language syntax.
