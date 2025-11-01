@@ -74,3 +74,25 @@ a:hover {
     text-decoration: var(--shiki-light-text-decoration) !important;
   }
 }
+
+pre {
+	@apply rounded-md pl-8;
+}
+
+pre code {
+	@apply block leading-tight p-2 pl-1;
+	font-size: 17px;
+	border-left: 1px solid rgba(115, 138, 148, 0.4);
+	counter-reset: step;
+	counter-increment: step 0;
+}
+
+pre code .line {
+	@apply relative;
+}
+
+pre code .line::before {
+	@apply absolute overflow-hidden w-7 h-4 -left-9 top-0 text-right;
+	content: counter(step);
+	counter-increment: step;
+}
