@@ -6,11 +6,72 @@ import ThemeIcon from "./ThemeIcon.astro";
 
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300 h-16"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-16"
 >
-  <div class="max-w-7xl mx-auto px-8 flex items-center justify-between h-full">
-    <Navigation />
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:block">
+      <Navigation />
+    </div>
+
+    <!-- Theme toggle (visible on all screens) -->
     <ThemeIcon />
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-neutral-700"
+  >
+    <nav class="px-4 py-4">
+      <ul class="flex flex-col space-y-3">
+        <li>
+          <a
+            href="/"
+            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/projects"
+            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
+          >
+            Projects
+          </a>
+        </li>
+        <li>
+          <a
+            href="/resume"
+            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -19,7 +80,7 @@ import ThemeIcon from "./ThemeIcon.astro";
     const header = document.getElementById("header");
     const isDark = document.documentElement.classList.contains('dark');
 
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
       if (isDark) {
         header?.classList.add("bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#404040]");
         header?.classList.remove("bg-white/95", "border-[#d0d7de]");
@@ -31,6 +92,32 @@ import ThemeIcon from "./ThemeIcon.astro";
       header?.classList.remove("bg-white/95", "bg-[#1a1a1a]/95", "backdrop-blur-sm", "border-b", "border-[#d0d7de]", "border-[#404040]");
     }
   }
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.querySelector(".menu-icon");
+  const closeIcon = document.querySelector(".close-icon");
+
+  mobileMenuButton?.addEventListener("click", () => {
+    const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+    mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu?.classList.toggle("hidden");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      mobileMenuButton?.setAttribute("aria-expanded", "false");
+    });
+  });
 
   window.addEventListener("scroll", updateHeaderBackground);
 
