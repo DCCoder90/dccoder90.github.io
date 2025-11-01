@@ -2,6 +2,7 @@
 import { siteConfig } from "../config";
 import Navigation from "../components/Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
+import Search from "./Search.astro";
 ---
 
 <header
@@ -27,8 +28,11 @@ import ThemeIcon from "./ThemeIcon.astro";
       <Navigation />
     </div>
 
-    <!-- Theme toggle (visible on all screens) -->
-    <ThemeIcon />
+    <!-- Search and Theme toggle (visible on all screens) -->
+    <div class="flex items-center gap-2">
+      <Search />
+      <ThemeIcon />
+    </div>
   </div>
 
   <!-- Mobile Navigation Menu -->
