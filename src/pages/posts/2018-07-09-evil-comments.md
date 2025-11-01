@@ -34,7 +34,7 @@ Through my experience the most common time I see comments it usually falls into 
 
 [Phil Karlton](http://www.meerkat.com/karlton/), a former software engineer at Netscape, uttered the now  infamous words:  "There are only two hard things in Computer Science: cache invalidation and naming things."
 
-![](https://dccoder.files.wordpress.com/2020/09/28468-co22tbhxeaawcrz.jpg?w=300&h=225)
+![](../../../public/imgs/posts/2018-07-09/28468-co22tbhxeaawcrz.jpg?w=300&h=225)
 
 This quote continues to prove true over two decades after its utterance.  Naming things, however, is something that we must take seriously.  Many new developers tend to use easy variable and methods names, sometimes even single letters, however software engineering is a profession.  If you need to leave a comment simply to describe what something is doing, maybe it's time to change the name.  A method with the signature "User GatherUserData(int userId)" is much more helpful than "User DoWork(int id)".  In his book, "[Refactoring: Improving the Design of Existing Code](https://amzn.to/2u7FyDb)", Martin Fowler states:
 
@@ -61,7 +61,7 @@ This is true in most places and tends to be the most common reasons that develop
 
 Breaking one monolithic function down into many smaller bits not only keeps you from dirtying up your code, but also greatly increases readability.  Take a look at the two methods below and see which one you find easier to understand:
 
-![](1eb89-badmethod-e1531164890435.png)![](aeea2-bettermethod-e1531164817633.png)
+![](../../../public/imgs/posts/2018-07-09/1eb89-badmethod-e1531164890435.png)![](../../../public/imgs/posts/2018-07-09/aeea2-bettermethod-e1531164817633.png)
 
 I'm sure now you're beginning to see the point and even agreeing.
 

@@ -24,13 +24,13 @@ Though this description technically does describe it, we can do a little better.
 
 Google has put together a great layout of the [specifications](https://material.io/design/introduction/#principles) of Material Design, essentially it was created for Android to create a better and more standardized method of creating user interfaces.  Have you noticed Google's applications all have a standard look and feel?
 
-[![Google Android Applications](c3c86-capture.png)](https://dccoder.files.wordpress.com/2020/09/c3c86-capture.png)
+[![Google Android Applications](../../../public/imgs/posts/2018-07-05/c3c86-capture.png)](../../../public/imgs/posts/2018-07-05/c3c86-capture.png)
 
 As stated earlier this approach focuses on physical "materials" such as those that we interact with when we are [afk](https://www.grammarly.com/blog/afk-meaning/).  Like physical materials users should be able to seamlessly interact with them and the materials should behave appropriately.  When you swipe a penny on your desk, does it not "flick" in the direction you swiped it?  Now think about many common menus in apps these days.  You can swipe right to open the menu, and then swipe it back to the left to close it.
 
 Each of these materials are then "layered" on top of each other to give us the look and feel that we have become accustomed to.  Material objects are commonly considered the "interact-able" part of the application: circular buttons, rectangular bars, etc.  Content is a little different, content is considered to be laid out on materials, content is usual text, video, and images.  Each part of the application is represented by it's own material.  Let's use Google's Gmail application as a visual reference:
 
-[![Gmail Android Application](ae775-220px-gmail_mobile_screenshot.png "Gmail Android Application")](https://dccoder.files.wordpress.com/2020/09/ae775-220px-gmail_mobile_screenshot.png)
+[![Gmail Android Application](../../../public/imgs/posts/2018-07-05/ae775-220px-gmail_mobile_screenshot.png "Gmail Android Application")](../../../public/imgs/posts/2018-07-05/ae775-220px-gmail_mobile_screenshot.png)
 
 In Google's Gmail android application (pictured above) we can see that it has a white background.  This background would be the first material and reside on the bottom most later of the application.  The red navigation bar located at the top of the application would again be a separate material with the content "Primary" located on it.  Hopefully this helps making things a little more clear in how applications using material design are laid out.
 
@@ -56,7 +56,7 @@ By following the Material Design specifications it will practically hand you a w
 
  
 
-[![Gmail Material Design Interface](adaec-728px-new-version-og-gmail-2018-e1530814777558.png "NewGmailInterface")](https://dccoder.files.wordpress.com/2020/09/adaec-728px-new-version-og-gmail-2018-e1530814777558.png)
+[![Gmail Material Design Interface](../../../public/imgs/posts/2018-07-05/adaec-728px-new-version-og-gmail-2018-e1530814777558.png "NewGmailInterface")](../../../public/imgs/posts/2018-07-05/adaec-728px-new-version-og-gmail-2018-e1530814777558.png)
 
 # Closing
 
