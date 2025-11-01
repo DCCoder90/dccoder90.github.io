@@ -1,0 +1,73 @@
+# License
+
+This repository contains two types of materials with different licenses:
+
+## Code License (MIT)
+
+Copyright (c) 2025 Ernest Mallett (dccoder90)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+### What is covered by the MIT License:
+
+- All source code in the `src/` directory (except content files)
+- Configuration files (e.g., `astro.config.mjs`, `tailwind.config.js`)
+- Build scripts and workflows (e.g., `.github/workflows/`)
+- Custom remark plugins and utilities
+- Component and layout code
+- Service worker implementation
+- All other code files
+
+---
+
+## Content License (All Rights Reserved)
+
+Copyright (c) 2025 Ernest Mallett (dccoder90)
+
+All content in this repository is the exclusive property of the author and is
+NOT licensed for general use. All rights reserved.
+
+### What is NOT licensed:
+
+- Blog posts and articles (`src/pages/posts/**/*.md`)
+- Images and graphics (`public/imgs/`)
+- Project descriptions and information (`src/projects.ts`)
+- Resume and personal information
+- About me content
+- Any other written content, media, or personal information
+
+**You may NOT use or distribute any of the above content without explicit
+written permission from the author. Copying and modification may only be done
+in the context of cloning this repository or forking it to create your own.**
+
+---
+
+## Summary
+
+You are free to:
+- Use the code to build your own website
+- Modify and customize the code for your needs
+- Learn from the implementation
+
+You must:
+- Create your own original content
+- Not use the author's personal content, blog posts, images, or project descriptions
+- Include appropriate attribution when using the code
+
+For questions about licensing or permission to use content, please contact the author.
