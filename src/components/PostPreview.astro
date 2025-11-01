@@ -8,7 +8,8 @@ const [year, month, day] = post.frontmatter.date.split('-');
 const headerImageUrl = post.frontmatter.headerimage
   ? (post.frontmatter.headerimage.startsWith('/') || post.frontmatter.headerimage.includes('://') ? post.frontmatter.headerimage : `/imgs/posts/${year}/${month}/${day}/${post.frontmatter.headerimage}`)
   : null;
-console.log(headerImageUrl)
+
+const postUrl = post.frontmatter.permalink || post.url;
 ---
 
 <article class="group relative flex flex-col bg-white dark:bg-[#262626] rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 overflow-hidden">
@@ -19,7 +20,7 @@ console.log(headerImageUrl)
   )}
 
   <div class="p-8">
-    <a href={post.url} class="flex-grow block">
+    <a href={postUrl} class="flex-grow block">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-3 group-hover:text-[#0969da] dark:group-hover:text-teal-400 transition-colors leading-tight">
         {post.frontmatter.title}
       </h2>
@@ -51,7 +52,7 @@ console.log(headerImageUrl)
           })}
         </time>
       </div>
-      <a href={post.url} class="inline-flex items-center gap-2 text-sm font-semibold text-[#0969da] dark:text-teal-400 hover:text-[#0550ae] dark:hover:text-teal-300 transition-colors group/link">
+      <a href={postUrl} class="inline-flex items-center gap-2 text-sm font-semibold text-[#0969da] dark:text-teal-400 hover:text-[#0550ae] dark:hover:text-teal-300 transition-colors group/link">
         Read Article
         <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

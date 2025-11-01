@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import imagePaths from "./src/lib/remark-image-paths.js";
 import remarkAddLayout from "./src/lib/remark-add-layout.js";
+import addPermalink from "./src/lib/remark-add-permalink.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
         dark: 'dracula',
       },
     },
-    remarkPlugins: [remarkAddLayout,imagePaths],
+    remarkPlugins: [remarkAddLayout, addPermalink, imagePaths],
   },
   vite: {
     plugins: [tailwindcss()],
