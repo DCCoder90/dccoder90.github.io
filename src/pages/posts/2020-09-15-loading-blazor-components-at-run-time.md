@@ -133,7 +133,7 @@ Next for the implementation, and I'm not going to lie it could have possibly bee
 
 Now it's time to pull out the demo components and see what we can do! I started by pulling the WeatherForecast and Counter components out into their own assemblies. These were just simple Razor Class Libraries (RCLs) targeting .netcoreapp3.1
 
-![](https://dccoder.files.wordpress.com/2020/09/extractedcomponents.png?w=479)
+![](../../../public/imgs/posts/2020-09-15/extractedcomponents.png?w=479)
 
 Since I'm not factoring in dependency injection at this point I did have to make some slight changes to the Component2.razor file to instantiate a new WeatherForecastService rather than have it injected.
 
@@ -309,7 +309,7 @@ I wound up only having to create a single page with the path /{componentName} wi
 
 Now with everything done the last thing is to fire it up, drop the components in and hope it all works as expected.
 
-![](2020-09-15_16-19-45.gif)
+![](../../../public/imgs/posts/2020-09-15/2020-09-15_16-19-45.gif)
 
 _Sorry for it being blurry, but it still gets the point across_
 

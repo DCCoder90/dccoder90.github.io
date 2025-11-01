@@ -17,7 +17,7 @@ coverImage: "clock.png"
 
 There are many aggravating things in programming. You have race conditions, thread locks, cache validation, and many others, but one thing can be one of the biggest headaches if not taken into account. Time. Handling time sounds like a fairly straight forward process, right? Get the current time, store it somewhere, and display it when you need to. If only it were that simple.
 
-![](378a5-download.jpg)
+![](../../../public/imgs/posts/2020-09-06/378a5-download.jpg)
 
 "We were in the right place at the right time, but unfortunately, we were in the wrong time zone."
 
@@ -35,7 +35,7 @@ Let's first start off by saying we're building an employee time-clock applicatio
 
 Now lets say that it's 8AM in our Headquarters in Chicago and we're expecting all of our employees to begin clocking in so we go and check our records. Bob, who lives in Miami has already clocked in an hour ago at 7AM and it takes another hour (at 9AM) for Jim in Houston to clock in! What is going on?! Do we have some sort of mutiny on our hands?! Before you phone the HR lead you laugh to yourself. Oh right, time zones.
 
-![](https://dccoder.files.wordpress.com/2020/09/timezones.gif?w=800)
+![](../../../public/imgs/posts/2020-09-06/timezones.gif)
 
 Time zones became a thing in the early 19th century as railway's became increasingly prevalent. Before the introduction of time zones cities used [mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time), but seeing as this could be off by 15 minutes it became increasingly inconvenient as railway cars would be very late or early depending on where you were.
 
@@ -55,7 +55,7 @@ Daylight Saving Time Example
 
 As you can see I stated above that this is how some areas in the US handle it, the reason for this is that all areas in the US observe daylight saving time except Arizona (excluding the Navajo Nation) and Hawaii.
 
-![](https://dccoder.files.wordpress.com/2020/09/external-content.duckduckgo.com-observedst.png?w=550)
+![](../../../public/imgs/posts/2020-09-06/external-content.duckduckgo.com-observedst.png)
 
 Chart showing DST observations
 
@@ -63,7 +63,7 @@ Chart showing DST observations
 
 So as you can tell from above we took something seemingly simple (time) and added 1 layer of complexity called time zones, then we added another called daylight saving time, then we added another as observance of DST is "splotchy" at best. So what does this look like when we put it all together? I'm glad you asked.
 
-![](https://dccoder.files.wordpress.com/2020/09/external-content.duckduckgo.com_.png?w=750)
+![](../../../public/imgs/posts/2020-09-06/external-content.duckduckgo.com_.png)
 
 Time zones with DST observance
 
@@ -107,6 +107,7 @@ Jon goes to explain the purpose behind NodaTime's existence as:
 
 NodaTime is by far one of the best and most complete time libraries out there. As an example of it's ease of use I present you with the following code. Disclaimer: This was copied and pasted straight from the NodaTime website as I'm too lazy to come up with my own examples at this point, and this gets the point across.
 
+```csharp
 // Instant represents time from epoch
 Instant now = SystemClock.Instance.GetCurrentInstant();
 
@@ -125,6 +126,7 @@ var london = DateTimeZoneProviders.Tzdb\["Europe/London"\];
 // Time zone conversions
 var localDate = new LocalDateTime(2012, 3, 27, 0, 45, 00);
 var before = london.AtStrictly(localDate);
+```
 
 ## Wrapping up
 

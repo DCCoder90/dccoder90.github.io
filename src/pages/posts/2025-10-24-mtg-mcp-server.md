@@ -25,9 +25,9 @@ Ever find yourself deep in a MTG deck-building session, wishing you could instan
 Checkout out my website!  If you've been here before you may notice I have a new theme! It's been a long-time-coming honestly, but I finally just put my head down and got it done.  I mean, look at that difference!
 
 ### Before
-![Before](../assets/img/posts/mtg-mcp-server/Screenshot-2025-10-24%20000353.png)
+![Before](../../../public/imgs/posts/2025-10-24/Screenshot-2025-10-24%20000353.png)
 ### After
-![After](../assets/img/posts/mtg-mcp-server/Screenshot-2025-10-24%20000419.png)
+![After](../../../public/imgs/posts/2025-10-24/Screenshot-2025-10-24%20000419.png)
 
 But anyways, now that that's out of the way, let's get back to the actual article.
 

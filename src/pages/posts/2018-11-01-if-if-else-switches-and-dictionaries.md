@@ -26,11 +26,11 @@ You can use dictionaries in place of large switches and the code is found [here]
 
 To start I made a small useless program with a fairly small switch statement only using 3 cases.
 
-![Small switch statement in c#](../assets/img/posts/if-if-else-switches-and-dictionaries/60968-smallswitch.png)
+![Small switch statement in c#](../../../public/imgs/posts/2018-11-01/60968-smallswitch.png)
 
 Once I compiled the program I used JetBrain's DotPeek to take a look at the de-compiled source.  Interestingly enough the compiler actually turned this into a nested if-not statement.
 
-![Small switch statement decompiled](../assets/img/posts/if-if-else-switches-and-dictionaries/b7a6b-smallswitchdecompiled.png)]
+![Small switch statement decompiled](../../../public/imgs/posts/2018-11-01/b7a6b-smallswitchdecompiled.png)]
 
  
 
@@ -44,19 +44,19 @@ After thinking about this I decided to make a much larger switch statement conta
 
  
 
-![Large Switch Statement in C#](../assets/img/posts/if-if-else-switches-and-dictionaries/13724-largeswitch.png)
+![Large Switch Statement in C#](../../../public/imgs/posts/2018-11-01/13724-largeswitch.png)
 
 As you can see this is pretty much the same thing just with several more cases.  Usually one would expect this to perform in the same manner since you're still calling the same command.  But let's take a look at it under a decompiler.
 
  
 
-![Large Switch Decompiled](../assets/img/posts/if-if-else-switches-and-dictionaries/0e039-largeswitchdecompiled.png)
+![Large Switch Decompiled](../../../public/imgs/posts/2018-11-01/0e039-largeswitchdecompiled.png)
 
 Well that's interesting.  Under the decompiler it looks like the same thing we passed in.  Let's try taking a look at the IL Code.
 
  
 
-![](../assets/img/posts/if-if-else-switches-and-dictionaries/cf4ff-largeswitchilexplanation.png)
+![](../../../public/imgs/posts/2018-11-01/cf4ff-largeswitchilexplanation.png)
 
 Now we're getting somewhere!  Looking at the IL code we can see that each of the cases were actually hashed by the compiler, and it's actually calling ComputeHashString on the input.  This drastically improves lookup times because the hashing function is fast.  And with the hash in hand, it can lookup for the value in O(1) time.  This makes it much faster than having to continue to evaluate conditions as it would have to in a collection of if statements.
 
@@ -80,7 +80,7 @@ With everything put together I decided to give it a go and it worked!
 
 Once I proved that it could work I created a few programs.  One with a small switch, one with a larger one, and one that used a dictionary.  Once they were all up and running I decided to do some benchmarks.
 
-![Switch Benchmarking Results](../assets/img/posts/if-if-else-switches-and-dictionaries/9940a-results.png)
+![Switch Benchmarking Results](../../../public/imgs/posts/2018-11-01/9940a-results.png)
 
 Needless to say I was fairly surprised.  While the dictionary switch was faster by 4ms (this number remained consistent) I believe some of that time could be due to class initialization among other things.
 
@@ -92,7 +92,7 @@ I decided to make this slightly more flexible by creating an interface and havin
 
  
 
-![DictionarySwitchDataChecker](../assets/img/posts/if-if-else-switches-and-dictionaries/d1a3b-dictionaryswitchdatachecker.png)](https://dccoder.files.wordpress.com/2020/09/d1a3b-dictionaryswitchdatachecker.png)
+![DictionarySwitchDataChecker](../../../public/imgs/posts/2018-11-01/d1a3b-dictionaryswitchdatachecker.png)](https://dccoder.files.wordpress.com/2020/09/d1a3b-dictionaryswitchdatachecker.png)
 
  
 
