@@ -11,6 +11,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>DCCoder - {pageTitle}</title>
+    <link rel="canonical" href={Astro.url} />
   </head>
   <body>
     <Header />
