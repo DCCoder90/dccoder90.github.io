@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
-const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())].sort();
+const tags = [...new Set(allPosts
+  .map((post: any) => post.frontmatter.tags)
+  .filter(tags => Array.isArray(tags))
+  .flat())].sort();
 
 // Count posts per tag
 const tagCounts = tags.map(tag => ({
   name: tag,
-  count: allPosts.filter((post: any) => post.frontmatter.tags.includes(tag)).length
+  count: allPosts.filter((post: any) => post.frontmatter.tags && Array.isArray(post.frontmatter.tags) && post.frontmatter.tags.includes(tag)).length
 }));
 
 const pageTitle = "All Tags";
