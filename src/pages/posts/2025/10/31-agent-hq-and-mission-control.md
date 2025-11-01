@@ -2,6 +2,7 @@
 share: true
 title: "Agent HQ and Mission Control sounds almost like a spy movie"
 date: "2025-10-31"
+description: "It feels like every week there's a new AI announcement. Well, this week it was GitHub's turn to drop a the latest skynet update. They've just unveiled what they're calling \"Agent HQ\" and \"mission control\" and it looks like they're about to fundamentally change how we interact with AI in our development workflows."
 categories:
   - "ai"
   - "news"

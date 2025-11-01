@@ -1,6 +1,7 @@
 ---
 share: true
 title: "AI vs. Agentic AI: What's the Difference?"
+description: "Is Agentic AI just the latest buzzword, some marketing spin, or is there a fundamental technical difference between an agentic system and a standard LLM, even one that's been fine-tuned?"
 date: "2025-10-24" 
 categories:
   - "ai"

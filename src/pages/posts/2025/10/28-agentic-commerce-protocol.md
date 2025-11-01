@@ -1,6 +1,7 @@
 ---
 share: true
 title: "ACP: AI in your shopping"
+description: "There's yet a another development on the agentic AI front.  Now it's something called the Agentic Commerce Protocol (ACP). Now we're not just working with tools but plugging it directly into how we shop online, especially within conversational platforms like ChatGPT."
 date: "2025-10-26" 
 categories:
   - "ai"

@@ -1,6 +1,7 @@
 ---
 share: true
 title: "AI in my home network"
+description: "Over the past few years I have gotten big into self-hosting.  My home network has been composed of high-end networking equipment and battery backups for years, but over the past two years or so I've started self-hosting as much as I can.  So I decided to leverage ai so instead of having to wait until I'm free, my family can now just ask the agent in plain English why something isn't working. Whether it's the network being slow or why a specific movie won't play on the media server."
 date: "2025-10-26" 
 categories:
   - "ai"

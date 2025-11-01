@@ -1,6 +1,7 @@
 ---
 share: true
 title: "Magic the Gathering meets AI: MTG MCP Server!"
+description: "Ever find yourself deep in a MTG deck-building session, wishing you could instantly pull up card details (with the power of AI of course)? Well, guess what? I got tired of wishing and decided to code it up myself! I've built a nifty little MCP server specifically for MTG nerds like us.  Plus I'm just excited to show off that I kind of know a little of what I'm doing around AI."
 date: "2025-10-24" 
 categories:
   - "ai"

@@ -1,6 +1,7 @@
 ---
 share: true
 title: "A Blast from the Past: Cringey Code and Teenage Dreams"
+description: "So this morning I had one of those moments. I stumbled across some of my old work online and went down a rabbit hole of reminiscing. Let's take a look at what I was like as a young, aspiring programmer.  Cringe included."
 date: "2025-10-31"
 categories:
   - "personal"
