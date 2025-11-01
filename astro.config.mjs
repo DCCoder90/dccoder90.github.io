@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import addLayout from "./src/lib/remark-add-layout.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
         dark: 'dracula',
       },
     },
+    remarkPlugins: [addLayout],
   },
   vite: {
     plugins: [tailwindcss()],

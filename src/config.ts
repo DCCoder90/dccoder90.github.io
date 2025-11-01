@@ -6,5 +6,6 @@ export const siteConfig = {
   social: {
     linkedin: "https://linkedin.com/in/dccoder",
     github: "https://github.com/DCCoder90",
-  }
-};
+  },
+  postsPerPage: 5,
+}
