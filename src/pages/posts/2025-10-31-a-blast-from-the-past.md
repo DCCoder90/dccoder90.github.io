@@ -7,6 +7,7 @@ categories:
 tags:
   - "personal"
   - "history"
+headerimage: "cringeteentoprofessional.png"
 ---
 
 So this morning I had one of those moments. I stumbled across some of my old work online and went down a rabbit hole of reminiscing. It got me thinking so much that I even posted this on LinkedIn:

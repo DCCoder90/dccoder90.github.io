@@ -2,13 +2,20 @@
 const { post } = Astro.props;
 const tags = post.frontmatter.tags || [];
 const displayTags = Array.isArray(tags) ? tags : [tags];
+
+const [year, month, day] = post.frontmatter.date.split('-');
+
+const headerImageUrl = post.frontmatter.headerimage
+  ? (post.frontmatter.headerimage.startsWith('/') || post.frontmatter.headerimage.includes('://') ? post.frontmatter.headerimage : `/imgs/posts/${year}/${month}/${day}/${post.frontmatter.headerimage}`)
+  : null;
+console.log(headerImageUrl)
 ---
 
 <article class="group relative flex flex-col bg-white dark:bg-[#262626] rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 overflow-hidden">
   <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-  {post.frontmatter.headerimage && (
-    <img src={post.frontmatter.headerimage.startsWith('/') || post.frontmatter.headerimage.includes('://') ? post.frontmatter.headerimage : `/imgs/posts/${post.frontmatter.headerimage}`} alt={post.frontmatter.title} class="w-full h-48 object-cover rounded-t-xl" />
+  {headerImageUrl && (
+    <img src={headerImageUrl} alt={post.frontmatter.title} class="w-full h-48 object-cover rounded-t-xl" />
   )}
 
   <div class="p-8">

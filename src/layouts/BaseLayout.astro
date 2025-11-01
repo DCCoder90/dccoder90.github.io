@@ -1,8 +1,31 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+
+const {
+  pageTitle,
+  description,
+  image,
+  author,
+  publishedDate,
+  type = 'website',
+  tags = []
+} = Astro.props;
+
+// Build full URL for image
+const imageUrl = image
+  ? (image.startsWith('http') ? image : new URL(image, Astro.site).href)
+  : new URL('/imgs/default-og-image.png', Astro.site).href;
+
+const canonicalUrl = Astro.url.href;
+const fullTitle = `DCCoder - ${pageTitle}`;
+const metaDescription = description || siteConfig.description;
+
+// LinkedIn prefers images that are 1200x627, but we'll provide what we have
+// and include alt text for accessibility
+const imageAlt = `${pageTitle} - ${siteConfig.name}`;
 ---
 <html lang="en">
   <head>
@@ -10,8 +33,36 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>DCCoder - {pageTitle}</title>
-    <link rel="canonical" href={Astro.url} />
+
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={metaDescription} />
+    {author && <meta name="author" content={author} />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="en_US" />
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {author && <meta property="article:author" content={author} />}
+    {tags.length > 0 && tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:image" content={imageUrl} />
   </head>
   <body>
     <Header />

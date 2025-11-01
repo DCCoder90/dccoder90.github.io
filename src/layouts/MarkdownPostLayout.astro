@@ -6,11 +6,30 @@ import "../styles/global.css";
 
 const author = frontmatter.author ?? siteConfig.author;
 
+const [year, month, day] = frontmatter.date.split('-');
+
 const headerImageUrl = frontmatter.headerimage
-  ? (frontmatter.headerimage.startsWith('/') || frontmatter.headerimage.includes('://') ? frontmatter.headerimage : `/imgs/posts/${frontmatter.date}/${frontmatter.headerimage}`)
+  ? (frontmatter.headerimage.startsWith('/') || frontmatter.headerimage.includes('://') ? frontmatter.headerimage : `/imgs/posts/${year}/${month}/${day}/${frontmatter.headerimage}`)
   : null;
+
+// Extract description from frontmatter or generate from first paragraph
+const description = frontmatter.description || frontmatter.excerpt || siteConfig.description;
+
+// Format date for article:published_time
+const publishedDate = frontmatter.date ? new Date(frontmatter.date).toISOString() : undefined;
+
+// Get tags for LinkedIn article:tag metadata
+const tags = frontmatter.tags || [];
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout
+  pageTitle={frontmatter.title}
+  description={description}
+  image={headerImageUrl}
+  author={author}
+  publishedDate={publishedDate}
+  type="article"
+  tags={tags}
+>
   {headerImageUrl && (
     <div
       class="relative w-full max-h-96 my-4 sm:my-8 mx-auto rounded-lg overflow-hidden flex items-center justify-center p-4 sm:p-8 text-center"
