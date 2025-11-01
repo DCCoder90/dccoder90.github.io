@@ -30,7 +30,7 @@ Like I said, the review team is usually pretty good about getting stuff out quic
 
 Thankfully Unity did implement a measure for publishers to verify invoice numbers, but nothing farther than that. So if there happens to be some issue (like I mentioned above with DGSave) you just have to post on your website or in the forums and hope that your current customers see it.
 
-**Hard work – Little pay** If you do plan on developing middle-ware to place on the Asset Store keep in mind that you will be doing work for very little pay. Now I'm not saying there aren't success stories (take a look at[Juha Kiili's blog](http://juhakiili.com/blog/my-first-five-days-in-the-asset-store/) for a great one) but they aren't very common. We do fairly well, enough a single man could make a meager living off of, but keep in mind we've only been doing this for a few months. Most people think: “Oh! I can put this up there and make a lot of money!”. Well, I'm sorry to say it doesn't work like that. Sure if you make something great expect a decent amount of sales at first, but you also have to think about the support.
+**Hard work – Little pay** If you do plan on developing middle-ware to place on the Asset Store keep in mind that you will be doing work for very little pay. Now I'm not saying there aren't success stories (take a look at[Juha Kiili's blog](https://web.archive.org/web/20231018090434/http://juhakiili.com/blog/my-first-five-days-in-the-asset-store/) for a great one) but they aren't very common. We do fairly well, enough a single man could make a meager living off of, but keep in mind we've only been doing this for a few months. Most people think: “Oh! I can put this up there and make a lot of money!”. Well, I'm sorry to say it doesn't work like that. Sure if you make something great expect a decent amount of sales at first, but you also have to think about the support.
 
 You're not just selling an asset, you're also selling support for that asset, and you have to keep it up and running. You could make a program where your customers just tell it “Make the most awesome game ever!” and it does! But, if you don't take the time to help people that don't understand it, help people that are having issues with it, then you WILL see sales drop, and quick! Customers are a business's life-line, if they get mad at you, you will lose them.
 
@@ -38,10 +38,10 @@ You're not just selling an asset, you're also selling support for that asset, an
 
 This section kind of ties into the previous one. Each time Unity updates their editor or API you will have to go back and double check to make sure everything works the way it should. Being an asset developer your customers are looking to you to make sure that everything works if they decided to upgrade to the latest and greatest edition of Unity, and it is your job to not let them down.
 
-**Extra Reading** These are just a few other blog posts I've found from other Asset Store publishers: [Anomalous Underdog on Build Report Tool](http://anomalousunderdog.blogspot.com/2013/05/my-first-time-selling-on-unity-asset.html) [Juha Kiili on RageSpline](http://juhakiili.com/blog/my-first-five-days-in-the-asset-store/)
+**Extra Reading** These are just a few other blog posts I've found from other Asset Store publishers: [Anomalous Underdog on Build Report Tool](https://web.archive.org/web/20231126084049/https://anomalousunderdog.blogspot.com/2013/05/my-first-time-selling-on-unity-asset.html) [Juha Kiili on RageSpline](https://web.archive.org/web/20231018090434/http://juhakiili.com/blog/my-first-five-days-in-the-asset-store/)
 
 As always, thanks for reading, and if you have any comments, questions, or suggestions feel free to let me know!
 
 _Original Article:_ 
 
-[https://www.gamasutra.com/blogs/ErnestMallett/20140326/214014/Selling\_on\_the\_Unity\_Asset\_Store.php](https://www.gamasutra.com/blogs/ErnestMallett/20140326/214014/Selling_on_the_Unity_Asset_Store.php)
+[https://web.archive.org/web/20210825055057/https://gamasutra.com/blogs/ErnestMallett/20140326/214014/Selling_on_the_Unity_Asset_Store.php](https://web.archive.org/web/20210825055057/https://gamasutra.com/blogs/ErnestMallett/20140326/214014/Selling_on_the_Unity_Asset_Store.php)

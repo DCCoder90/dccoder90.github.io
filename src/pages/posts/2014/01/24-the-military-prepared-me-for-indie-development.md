@@ -42,4 +42,4 @@ This has saved me more then once. I would much rather shell out a few hundred do
 
 _Original Article:_ 
 
-_[https://www.gamasutra.com/blogs/ErnestMallett/20140124/209223/The\_military\_prepared\_me\_for\_indie\_development.php](https://www.gamasutra.com/blogs/ErnestMallett/20140124/209223/The_military_prepared_me_for_indie_development.php)_
+_[https://web.archive.org/web/20210825055108/https://gamasutra.com/blogs/ErnestMallett/20140124/209223/The_military_prepared_me_for_indie_development.php](https://web.archive.org/web/20210825055108/https://gamasutra.com/blogs/ErnestMallett/20140124/209223/The_military_prepared_me_for_indie_development.php)_

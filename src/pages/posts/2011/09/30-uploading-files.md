@@ -16,7 +16,9 @@ PHP as you all know is a very powerful and yet fairly loose language, however on
 
 PHP as you all know is a very powerful and yet fairly loose language, however one of it's very usefully abilities is the ability to upload files. PHP can upload literally any type of file you allow it to. However this can also open up many holes for many exploits, which is why we'll also cover some basic security along with uploading the files.
 
-Where shall we start? How about at the very beginning, how are you going to upload files without a form to upload them from? First I'll show you an example: ```html
+Where shall we start? How about at the very beginning, how are you going to upload files without a form to upload them from? First I'll show you an example: 
+
+```html
 <form enctype="multipart/form-data" action="upload.php" method="post">
 
 <input type="hidden" name="MAX_FILE_SIZE" value="250000">
@@ -26,15 +28,17 @@ Choose a file to upload: <input name="uploadedfile" type="file"><br><br />
 <input type="submit" name="submitfile" value="Upload File"><br />
 
 </form><br />
-``` Now, I'm assuming you have basic knowledge of HTML, however one of the parts of this you may not have yet seen is:
+``` 
 
-enctype="multipart/form-data"
+Now, I'm assuming you have basic knowledge of HTML, however one of the parts of this you may not have yet seen is: `enctype="multipart/form-data"`
 
 This part, although rather large and seemingly unnecessary, is required to upload files as it tells the server that we are sending data which is more then text. Also the "MAX\_FILE\_SIZE" field is also useful as it defines the maximum size of the file to be uploaded. Now that we have our form ready we have to start on the muscle of our little program, for this we'll create a blank file and save it as "upload.php".
 
 Now for another example...yayyy!!!
 
-Except this time all the explanations are in the source code ;) ```php
+Except this time all the explanations are in the source code ;) 
+
+```php
 
 $target_path = "uploads/"; //This is the path where you want all the uploaded files to be stored.
 
@@ -65,6 +69,8 @@ echo "There was an error uploading the file, please try again!";
 echo "The file type was invalid!";
 
 }
-``` Well that pretty much concludes it, I know this is a crappy tutorial but it get’s the job done and explains the basics (remember I said basics) of file uploading and the basics (basics) of the security to you. Just remember you really need to guard the files you upload, for example what if someone managed to upload a PHP script that deleted all the files in your directory? Well then they could just as easily access it from the browser and delete them….where would you be then?
+``` 
+
+Well that pretty much concludes it, I know this is a crappy tutorial but it get’s the job done and explains the basics (remember I said basics) of file uploading and the basics (basics) of the security to you. Just remember you really need to guard the files you upload, for example what if someone managed to upload a PHP script that deleted all the files in your directory? Well then they could just as easily access it from the browser and delete them….where would you be then?
 
 See some of the reference links for a little more info on this topic, especially the MIME reference link, it’ll really help ya out in the long run.
