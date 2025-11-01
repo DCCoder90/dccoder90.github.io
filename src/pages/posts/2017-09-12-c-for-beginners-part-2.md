@@ -10,7 +10,7 @@ tags:
   - "beginners"
   - "c"
   - "tutorial"
-coverImage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
+headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
 ---
 
 In the [previous tutorial](http://dccoder.local/2017/09/c-for-beginners-part-1/) we covered some basic structure of a C# program and what it looks like.  I would like to build upon that knowledge and cover some of the basic syntax of C#, some of this may be slightly repetitive from the previous tutorial but it is important to get this basic syntax down.
@@ -59,7 +59,7 @@ A method, or also commonly referred to as a function, is usually defined as a co
 
 Methods are created by defining a return type, a name, a set of parameters, and defining the method's scope.   This was briefly covered in the previous tutorial so let's bring in that image to help out.
 
-![](07365-untitled-1.png)
+![](../../../public/imgs/posts/2017-09-10/0254e-untitled-1.png)
 
 As you can see here we are looking at the "Main" method within our HelloWorld program.  Here we have a return type of void (which literally means nothing), a name for the method (Main), and the parameters (string\[\] args).  The scope is set by the opening and closing curly braces.
 

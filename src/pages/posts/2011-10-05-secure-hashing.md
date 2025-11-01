@@ -27,7 +27,10 @@ Combining different message digests, such as SHA1 and MD5, we may make an even m
 $hash=md5( sha1("Password" . "salt") ) );
 ```
 
-Now as one may be able to tell this can and will create a fairly nice MD5 hash, but can you see a problem? As stated in a previous paragraph the 128-bit MD5 algorithm is less secure than the 160-bit SHA1 So let’s switch the two around, and add a few more salts ![](../../../public/imgs/posts/15.gif)
+Now as one may be able to tell this can and will create a fairly nice MD5 hash, but can you see a problem? As stated in a previous paragraph the 128-bit MD5 algorithm is less secure than the 160-bit SHA1 So let’s switch the two around, and add a few more salts 
+
+Missing GIF
+!\[](../../../public/imgs/posts/15.gif)
 
 ```php
 $hash= sha1( "a9b" . md5("Password" . "salt"), "aa9a" . "salt" ) ; 

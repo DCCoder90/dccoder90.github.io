@@ -9,7 +9,7 @@ tags:
   - "beginners"
   - "c"
   - "tutorial"
-coverImage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
+headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
 ---
 
 Ok so yesterday I received a request to do a C# tutorial covering the basics of the C# language. This will be a short multi-part tutorial on the basics of C#. In Part 1 we're going to cover some basic structure and syntax.  I do not intend to get too in-depth but cover just enough to allow others to be able to start writing simple programs and get comfortable with the language syntax.
@@ -30,7 +30,16 @@ Let's start by looking at the all-famous Hello World program in C#.
 
 ```csharp
 
-using System; namespace HelloWorldApplication{   public class HelloWorld{     public static void Main(string[] args){       /* my first program in C# */       Console.WriteLine("Hello World");       Console.ReadKey();     }   } }
+using System; 
+namespace HelloWorldApplication {   
+    public class HelloWorld{     
+        public static void Main(string[] args){       
+            /* my first program in C# */       
+            Console.WriteLine("Hello World");       
+            Console.ReadKey();     
+        }   
+    } 
+}
 
 ```
 
@@ -65,7 +74,7 @@ The access modifier can be one of four modifiers.
 
 For classes you will generally only use public or internal.  If you do not specify an access modifier it will always default to public.  Let's take a look with a visual using our example above.  For simplicity I have removed all the logic within the class.
 
-[![](images/Untitled.png)](http://dccoder.local/wp-content/uploads/2017/09/Untitled.png)
+![](../../../public/imgs/posts/2017-09-10/37ac8-untitled.png)
 
 ## Creating a method
 
@@ -90,7 +99,7 @@ Just like with a class you will need an access modifier, a name, and the opening
 
 Lets take a look at another image.
 
-[![](images/Untitled-1.png)](http://dccoder.local/wp-content/uploads/2017/09/Untitled-1.png)
+![](../../../public/imgs/posts/2017-09-10/0254e-untitled-1.png)
 
 In our example this method is actually a very important one.  Within any C# program a static void Main() method is the entry point to the program, where all the magic starts.   This is created by ensuring that the method's access is public, it's a static method (we'll cover that in a second), it has a return type of void (meaning it doesn't return anything), and it has a name of "Main".
 

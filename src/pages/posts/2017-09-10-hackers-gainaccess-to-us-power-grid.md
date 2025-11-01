@@ -10,7 +10,7 @@ tags:
   - "security"
   - "ukraine"
   - "united-states"
-coverImage: "d4da3-hacker-hacked-power-grid-100638396-primary.idge_.jpg"
+headerimage: "d4da3-hacker-hacked-power-grid-100638396-primary.idge_.jpg"
 ---
 
 In a time of hacker attacks on critical infrastructure, even a run-of-the-mill malware infection on an electric utility’s network is enough to raise alarm bells. But the latest collection of power grid penetrations went far deeper: Security firm Symantec is warning that a series of recent hacker attacks not only compromised energy companies in the US and Europe but also resulted in the intruders gaining hands-on access to power grid operations—enough control that they could have induced blackouts on American soil at will.

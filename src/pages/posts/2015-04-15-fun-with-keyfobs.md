@@ -16,7 +16,7 @@ Anyways, just like I said I would I got into trying to actually demodulate the s
 
 This will leave the second signal free for use at a later point in time, for example after you walk into the store or whatever.
 
-![](images/keyfob_IDR-300x229-300x229.png)
+![](../../../public/imgs/posts/2015-04-15/71e15-keyfob_idr-300x229-1.png)
 
 The screenshot is showing the “Receive” portion of the program, this is what will watch for and intercept the signal when you use your keyfob. It also shows tabs and various settings to influence how it works and go to the jamming portion of the program.  Also, as I’m sure you can all tell…I did this the easy way and just used [GNURadio](https://web.archive.org/web/20150524200808/https://gnuradio.org/).
 
