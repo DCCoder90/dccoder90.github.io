@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { projects, projectsPerRow } from '../projects';
 const pageTitle = "Projects";
+
+// Extract all unique tags
+const allTags = [...new Set(projects.flatMap(project => project.tags))].sort();
 ---
 <BaseLayout pageTitle={pageTitle}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
@@ -18,9 +21,30 @@ const pageTitle = "Projects";
         A collection of things I've built
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projectsPerRow} gap-6 sm:gap-8">
+
+    <!-- Tag Filter Section -->
+    <div class="mb-8 sm:mb-12">
+      <div class="flex flex-wrap gap-2 justify-center items-center">
+        <span class="text-sm font-semibold text-gray-700 dark:text-neutral-300 mr-2">Filter by:</span>
+        <button
+          class="tag-filter active bg-[#0969da] dark:bg-teal-500 text-white rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold hover:bg-[#0550ae] dark:hover:bg-teal-600 transition-colors"
+          data-tag="all"
+        >
+          All Projects
+        </button>
+        {allTags.map(tag => (
+          <button
+            class="tag-filter bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            data-tag={tag}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projectsPerRow} gap-6 sm:gap-8" id="projects-grid">
       {projects.map(project => (
-        <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="project-card bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-tags={JSON.stringify(project.tags)}>
           {project.link ? (
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img src={project.image ? project.image : '/imgs/default-project.jpg'} alt={project.name} class="w-full h-40 sm:h-48 object-cover"/>
@@ -33,7 +57,7 @@ const pageTitle = "Projects";
             <p class="text-gray-700 dark:text-gray-300 text-sm sm:text-base mb-4 line-clamp-3">{project.description}</p>
             <div class="flex flex-wrap gap-2 mb-4">
               {project.tags.map(tag => (
-                <span class="bg-gray-200 dark:bg-gray-700 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200">{tag}</span>
+                <button class="project-tag bg-gray-200 dark:bg-gray-700 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer" data-tag={tag}>{tag}</button>
               ))}
             </div>
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
@@ -50,3 +74,68 @@ const pageTitle = "Projects";
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  // Get all filter buttons and project cards
+  const filterButtons = document.querySelectorAll('.tag-filter');
+  const projectTags = document.querySelectorAll('.project-tag');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  function filterProjects(selectedTag) {
+    // Update active state on filter buttons
+    filterButtons.forEach(btn => {
+      if (btn.getAttribute('data-tag') === selectedTag) {
+        btn.classList.add('active', 'bg-[#0969da]', 'dark:bg-teal-500', 'text-white');
+        btn.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-200');
+      } else {
+        btn.classList.remove('active', 'bg-[#0969da]', 'dark:bg-teal-500', 'text-white');
+        btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-200');
+      }
+    });
+
+    // Filter projects
+    projectCards.forEach(card => {
+      const tags = JSON.parse(card.getAttribute('data-tags') || '[]');
+
+      if (selectedTag === 'all' || tags.includes(selectedTag)) {
+        card.style.display = '';
+        // Add fade-in animation
+        card.style.animation = 'fadeIn 0.3s ease-in';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Add click handlers to filter buttons
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-tag');
+      filterProjects(tag);
+    });
+  });
+
+  // Add click handlers to project tags
+  projectTags.forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tagName = tag.getAttribute('data-tag');
+      filterProjects(tagName);
+      // Scroll to top of page smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
