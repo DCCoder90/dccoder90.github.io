@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 share: true
 title: "AI in my home network"
 date: "2025-10-26" 
@@ -18,7 +17,7 @@ Over the past few years I have gotten big into self-hosting.  My home network ha
 
 The one down side is that I am the only one that's really technically literate in my household, so unfortunately that leads me to be regularly inundated with requests.  So in response to a video I actually saw from Network Chuck I decided to build my own little agent to manage it all for me.   To be honest, I started on this about a month ago and just regularly make small adjustments here and there.
 
-[Before](../assets/img/posts/ai-in-home-network/Screenshot-2025-10-26-174837.png)
+![Before](../assets/img/posts/ai-in-home-network/Screenshot-2025-10-26-174837.png)
 
 The screenshot above is a small snippet of the automation. The whole thing focuses around using [N8N](https://n8n.io) to easily manage and maintain my agents and allows for the rapid creation of tools and parameters for the agent to operate with and within. A few things I have it set up to do is to keep me aware of various changes within my network.
 

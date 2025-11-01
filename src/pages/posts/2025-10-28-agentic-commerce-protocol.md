@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 share: true
 title: "ACP: AI in your shopping"
 date: "2025-10-26" 
