@@ -1,13 +1,29 @@
 ---
+import { projects } from '../projects';
+
 // Get all posts for search index
 const allPosts = await Astro.glob('../pages/posts/**/*.md');
-const searchIndex = allPosts.map(post => ({
+const postIndex = allPosts.map(post => ({
+  type: 'post',
   title: post.frontmatter.title,
   description: post.frontmatter.description || '',
   tags: post.frontmatter.tags || [],
   date: post.frontmatter.date,
   url: post.frontmatter.permalink || post.url,
 }));
+
+// Get all projects for search index
+const projectIndex = projects.map(project => ({
+  type: 'project',
+  title: project.name,
+  description: project.description,
+  tags: project.tags,
+  date: project.startDate,
+  url: project.link || '/projects',
+}));
+
+// Combine both indexes
+const searchIndex = [...postIndex, ...projectIndex];
 ---
 
 <div class="relative search-container">
@@ -44,7 +60,7 @@ const searchIndex = allPosts.map(post => ({
           <input
             type="text"
             id="search-input"
-            placeholder="Search posts by title, description, or tags..."
+            placeholder="Search posts and projects by title, description, or tags..."
             class="w-full pl-12 pr-12 py-4 text-lg bg-transparent text-gray-900 dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none"
             autocomplete="off"
           />
@@ -100,10 +116,10 @@ const searchIndex = allPosts.map(post => ({
     }
 
     const lowerQuery = query.toLowerCase();
-    const results = searchIndex.filter(post => {
-      const titleMatch = post.title.toLowerCase().includes(lowerQuery);
-      const descMatch = post.description.toLowerCase().includes(lowerQuery);
-      const tagsMatch = post.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
+    const results = searchIndex.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(lowerQuery);
+      const descMatch = item.description.toLowerCase().includes(lowerQuery);
+      const tagsMatch = item.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
       return titleMatch || descMatch || tagsMatch;
     });
 
@@ -113,36 +129,70 @@ const searchIndex = allPosts.map(post => ({
           <svg class="w-12 h-12 mx-auto text-gray-300 dark:text-neutral-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          <p class="text-gray-600 dark:text-neutral-400">No posts found for "${query}"</p>
-          <p class="text-sm text-gray-500 dark:text-neutral-500 mt-2">Try different keywords or browse all posts</p>
+          <p class="text-gray-600 dark:text-neutral-400">No results found for "${query}"</p>
+          <p class="text-sm text-gray-500 dark:text-neutral-500 mt-2">Try different keywords or browse all content</p>
         </div>
       `;
       return;
     }
 
+    // Count results by type
+    const postCount = results.filter(r => r.type === 'post').length;
+    const projectCount = results.filter(r => r.type === 'project').length;
+
     // Display results
-    const resultsHTML = results.map(post => {
-      const date = new Date(post.date).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      });
+    const resultsHTML = results.map(item => {
+      const isProject = item.type === 'project';
+
+      // Format date based on type
+      let dateStr = '';
+      if (isProject) {
+        dateStr = item.date; // Projects already have formatted dates like "09/2022"
+      } else {
+        try {
+          dateStr = new Date(item.date).toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+        } catch (e) {
+          dateStr = item.date;
+        }
+      }
+
+      // Type badge
+      const typeBadge = isProject
+        ? '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Project</span>'
+        : '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Post</span>';
 
       return `
-        <a href="${post.url}" class="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors border-b border-gray-100 dark:border-neutral-800 last:border-0">
-          <h3 class="font-semibold text-gray-900 dark:text-neutral-100 mb-1">${post.title}</h3>
-          ${post.description ? `<p class="text-sm text-gray-600 dark:text-neutral-400 mb-2 line-clamp-2">${post.description}</p>` : ''}
+        <a href="${item.url}" class="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors border-b border-gray-100 dark:border-neutral-800 last:border-0" ${isProject ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+          <div class="flex items-start gap-2 mb-1">
+            ${typeBadge}
+            <h3 class="font-semibold text-gray-900 dark:text-neutral-100 flex-1">${item.title}</h3>
+          </div>
+          ${item.description ? `<p class="text-sm text-gray-600 dark:text-neutral-400 mb-2 line-clamp-2">${item.description}</p>` : ''}
           <div class="flex items-center gap-3 text-xs text-gray-500 dark:text-neutral-500">
-            <span>${date}</span>
-            ${post.tags.length > 0 ? `<span>•</span><span>${post.tags.slice(0, 3).join(', ')}</span>` : ''}
+            <span>${dateStr}</span>
+            ${item.tags.length > 0 ? `<span>•</span><span>${item.tags.slice(0, 3).join(', ')}</span>` : ''}
           </div>
         </a>
       `;
     }).join('');
 
+    // Build summary text
+    let summaryText = `Found ${results.length} result${results.length === 1 ? '' : 's'}`;
+    if (postCount > 0 && projectCount > 0) {
+      summaryText = `Found ${postCount} post${postCount === 1 ? '' : 's'} and ${projectCount} project${projectCount === 1 ? '' : 's'}`;
+    } else if (postCount > 0) {
+      summaryText = `Found ${postCount} post${postCount === 1 ? '' : 's'}`;
+    } else if (projectCount > 0) {
+      summaryText = `Found ${projectCount} project${projectCount === 1 ? '' : 's'}`;
+    }
+
     searchResults.innerHTML = `
       <div class="mb-2 px-2">
-        <p class="text-sm text-gray-600 dark:text-neutral-400">Found ${results.length} ${results.length === 1 ? 'post' : 'posts'}</p>
+        <p class="text-sm text-gray-600 dark:text-neutral-400">${summaryText}</p>
       </div>
       ${resultsHTML}
     `;
