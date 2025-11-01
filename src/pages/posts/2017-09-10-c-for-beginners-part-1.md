@@ -74,7 +74,7 @@ The access modifier can be one of four modifiers.
 
 For classes you will generally only use public or internal.  If you do not specify an access modifier it will always default to public.  Let's take a look with a visual using our example above.  For simplicity I have removed all the logic within the class.
 
-![](../../../public/imgs/posts/2017-09-10/37ac8-untitled.png)
+![](37ac8-untitled.png)
 
 ## Creating a method
 
@@ -99,7 +99,7 @@ Just like with a class you will need an access modifier, a name, and the opening
 
 Lets take a look at another image.
 
-![](../../../public/imgs/posts/2017-09-10/0254e-untitled-1.png)
+![](0254e-untitled-1.png)
 
 In our example this method is actually a very important one.  Within any C# program a static void Main() method is the entry point to the program, where all the magic starts.   This is created by ensuring that the method's access is public, it's a static method (we'll cover that in a second), it has a return type of void (meaning it doesn't return anything), and it has a name of "Main".
 

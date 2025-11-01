@@ -18,7 +18,7 @@ When I first started learning about AI one of the more confusing things to me we
 
 It's tempting to think of tokens as just words, but it's a bit more complicated than that.
 
-![AI Tokens](../../../public/imgs/posts/2025-10-22/AI-token-615x410-4161998531.jpeg)
+![AI Tokens](AI-token-615x410-4161998531.jpeg)
 
 ## The Tokenization Process
 

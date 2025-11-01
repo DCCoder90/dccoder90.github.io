@@ -31,7 +31,7 @@ So let's head over to [https://demo.moodle.net/login/index.php](https://demo.moo
 
  
 
-Take a look at the screen below and you can see how easy it is to grab this information.  Now let's grab the Username, Password, and Login button ids.[![](../../../public/imgs/posts/2018-06-27/af5e5-09-getting-username-box-id.png)](../../../public/imgs/posts/2018-06-27/af5e5-09-getting-username-box-id.png)
+Take a look at the screen below and you can see how easy it is to grab this information.  Now let's grab the Username, Password, and Login button ids.[![](af5e5-09-getting-username-box-id.png)](af5e5-09-getting-username-box-id.png)
 
  
 
@@ -43,7 +43,7 @@ Once you've went through and grabbed them then you should have details similar t
 
 Great!  Let's just make a note of those, now if you will scroll down the page just a wee little bit, you'll see the login information.
 
-![](../../../public/imgs/posts/2018-06-27/f9124-10-logindetails.png)
+![](f9124-10-logindetails.png)
 
  
 
@@ -107,7 +107,7 @@ Now on to running the test!
 
 Now if you rebuild your solution (CTRL+Shift+B) you will notice a new test appear in your test explorer.
 
-[![](../../../public/imgs/posts/2018-06-27/d3993-12-new-test-appears-e1530130429275.png)](../../../public/imgs/posts/2018-06-27/d3993-12-new-test-appears-e1530130429275.png)
+[![](d3993-12-new-test-appears-e1530130429275.png)](d3993-12-new-test-appears-e1530130429275.png)
 
  
 
@@ -125,7 +125,7 @@ Now if you rebuild your solution (CTRL+Shift+B) you will notice a new test appea
 
 Click "Run All" again and see what happens.  You should see your first test run and the browser window popup then close.  Your new test should then appear, you should see the browser window popup, go to Moodle, login, then pause for 5 seconds before closing again and marking the test as "Passed".
 
-[![](../../../public/imgs/posts/2018-06-27/1664c-13-test-running-e1530130455951.png)](../../../public/imgs/posts/2018-06-27/1664c-13-test-running-e1530130455951.png)[![](../../../public/imgs/posts/2018-06-27/18b16-14-test-successfull-e1530130476565.png)](../../../public/imgs/posts/2018-06-27/18b16-14-test-successfull-e1530130476565.png)
+[![](1664c-13-test-running-e1530130455951.png)](1664c-13-test-running-e1530130455951.png)[![](18b16-14-test-successfull-e1530130476565.png)](18b16-14-test-successfull-e1530130476565.png)
 
  
 
@@ -155,11 +155,11 @@ Click "Run All" again and see what happens.  You should see your first test run
 
 This is great!  It actually logs in!  Now we're getting somewhere!  But, there is a problem here, I don't know if you've noticed.  Currently the test passes (as indicated by the green) when it logs in.  Try changing the password to something else and rerunning it and see what happens.
 
-[![](../../../public/imgs/posts/2018-06-27/6251b-16-failed-login.png)](../../../public/imgs/posts/2018-06-27/6251b-16-failed-login.png)[![](../../../public/imgs/posts/2018-06-27/8dc11-17-test-passed.png)](../../../public/imgs/posts/2018-06-27/8dc11-17-test-passed.png)
+[![](6251b-16-failed-login.png)](6251b-16-failed-login.png)[![](8dc11-17-test-passed.png)](8dc11-17-test-passed.png)
 
 Uh oh, this is an obvious problem.  We want the test to fail when it doesn't log in, and only pass upon a successful authentication, but how do we do this?  Well we need to identify something that only a logged in user (under normal conditions) will see.   The "Admin User" box at the top right of the screen (when you're logged in) seems to be a good reference point.
 
-![](../../../public/imgs/posts/2018-06-27/507ab-21-good-area-to-check-for-successfull-login.png)
+![](507ab-21-good-area-to-check-for-successfull-login.png)
 
  
 

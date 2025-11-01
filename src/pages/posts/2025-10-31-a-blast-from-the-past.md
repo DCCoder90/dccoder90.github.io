@@ -17,7 +17,7 @@ So this morning I had one of those moments. I stumbled across some of my old wor
 
 Well, I guess it's time to make good on that promise. Let's take a look at what I was like as a young, aspiring programmer.
 
-![HeaderImage](../../../public/imgs/posts/2025-10-22/cringeteentoprofessional.png)
+![HeaderImage](cringeteentoprofessional.png)
 
 ## The Beginning: BASIC, PHP, and Goth Kids
 

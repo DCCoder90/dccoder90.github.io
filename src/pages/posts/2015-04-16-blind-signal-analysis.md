@@ -30,10 +30,10 @@ Now, my best guess is that it would either be Cellular South, or Powertel.  I s
 
 Anyways, on to some pictures.
 
-![](../../../public/imgs/posts/2015-04-16/442ec-histo-const-sig-286x300-1.png)
+![](442ec-histo-const-sig-286x300-1.png)
 
 _Looking a histogram and constellation of the signal._
 
-![](../../../public/imgs/posts/2015-04-16/fc3c0-bits-sig-300x243-1.png) 
+![](fc3c0-bits-sig-300x243-1.png) 
 
 _Looking at the raw bits from the signal. (9/10 they are encrypted so I stopped here)_

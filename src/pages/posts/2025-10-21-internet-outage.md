@@ -33,7 +33,7 @@ So, how did one networking hiccup spiral completely out of control? It turns out
 
 The sheer number of services that went down is staggering. We're talking 142 different AWS services. This hit Amazon's own stuff (Amazon.com, Prime Video, Alexa, Ring) and a "who's who" of the internet: Snapchat, Venmo, Fortnite, Perplexity AI, Reddit, Lyft, and Canvas (the learning platform used by countless schools). It even reached across the pond, affecting the UK’s Lloyds Bank and the British government’s HMRC website.
 
-![AWS Outage Services Effected](../../../public/imgs/posts/2025-10-21/fe34sdf.png)
+![AWS Outage Services Effected](fe34sdf.png)
 
 An IT professor put it perfectly: "When a major cloud provider sneezes, the Internet catches a cold." He's not wrong. This just highlights our dangerous dependency on a handful of cloud providers.
 
