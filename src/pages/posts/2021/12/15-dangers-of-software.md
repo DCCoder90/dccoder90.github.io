@@ -6,6 +6,10 @@ categories:
   - "general"
   - "programming"
 coverImage: "61b5c0dc998ead07e557a882.png"
+tags: 
+  - "security"
+  - "open-source"
+  - "programming"
 ---
 
 # What's going on?

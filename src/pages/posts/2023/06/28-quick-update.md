@@ -4,6 +4,9 @@ title: "Quick Update"
 date: "2023-06-28"
 categories:
   - "general"
+tags: 
+  - "personal"
+  - "ai"
 ---
 
 I just realized the other day that it's been a very long time since I've made any type of post on here.   I am still alive and still working in software, but a lot has happened.[Canada caught fire](https://www.cbsnews.com/news/map-canadian-wildfires-2023-where-are-the-fires-ontario-quebec/), there were riots, [insurrection trials](https://www.justice.gov/usao-dc/capitol-breach-cases), the [start of WWIII](https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine), and [much more](https://en.wikipedia.org/wiki/2022_in_the_United_States).

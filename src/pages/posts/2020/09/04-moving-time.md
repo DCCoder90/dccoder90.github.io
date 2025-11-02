@@ -5,6 +5,9 @@ date: "2020-09-04"
 categories: 
   - "personal"
 coverImage: "box_png92.png"
+tags: 
+  - "hosting"
+  - "personal"
 ---
 
 So after about 3 years of sticking with Siteground, I decided to finally look for something different. After a while of looking I finally decided to go with Wordpress.com, I mean why not? They have a simple interface, their personal package was over $20 a month cheaper than what I was paying, and I don't have to maintain anything. I guess now I just have to start writing more.

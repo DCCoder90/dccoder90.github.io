@@ -2,9 +2,10 @@
 share: true
 title: "Reinstalling Nuget Packages"
 date: "2018-10-04"
-categories: 
+categories:
   - "general"
 coverImage: "259f5-screenshot.png"
+tags: ["nuget", "visual-studio", "troubleshooting", "dotnet"]
 ---
 
 So the majority of this morning I have been struggling trying to get a project to correctly build, fighting nuget packages.  The issue was coming from missing dependencies.  I tried all sorts of methods through visual studio to attempt to get the problem fixed, yet nothing worked.  I tried multiple times, but each time visual studio claimed they were up-to-date.  We have been having issues with redirect bindings so a coworker suggested I check those.  The redirect bindings in the project were fine, but finally I figured it out.
