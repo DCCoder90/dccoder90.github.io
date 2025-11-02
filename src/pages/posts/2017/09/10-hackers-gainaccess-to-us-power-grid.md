@@ -1,5 +1,5 @@
 ---
-title: "Hackers gainaccess to US power grid"
+title: "Hackers gain access to US power grid"
 date: "2017-09-10"
 categories: 
   - "news"
