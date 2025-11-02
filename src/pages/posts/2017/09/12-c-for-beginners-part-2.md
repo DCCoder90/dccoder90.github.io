@@ -8,12 +8,12 @@ categories:
 tags: 
   - "net"
   - "beginners"
-  - "c"
+  - "c#"
   - "tutorial"
 headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.jpg"
 ---
 
-In the [previous tutorial](http://dccoder.local/2017/09/c-for-beginners-part-1/) we covered some basic structure of a C# program and what it looks like.  I would like to build upon that knowledge and cover some of the basic syntax of C#, some of this may be slightly repetitive from the previous tutorial but it is important to get this basic syntax down.
+In the [previous tutorial](https://dccoder.com/posts/2017/09/10-c-for-beginners-part-1//) we covered some basic structure of a C# program and what it looks like.  I would like to build upon that knowledge and cover some of the basic syntax of C#, some of this may be slightly repetitive from the previous tutorial but it is important to get this basic syntax down.
 
 # The Using Keyword
 
@@ -39,7 +39,9 @@ Multi-line comments begin with a slash followed by an asterisk, they are ended w
 
 Variables are special elements that are used for storing data.  They can be used to store nearly anything and be nearly any kind of type.  Variables are created by specifying a type and a variable name.  The name is how you interact with the variable after it is created.
 
-The example below demonstrates how to create a variable that will hold an integer, I have decided to call this variable "_somenumber_". ```csharp
+The example below demonstrates how to create a variable that will hold an integer, I have decided to call this variable "_somenumber_". 
+
+```csharp
 int somenumber;
 ```
 
@@ -67,7 +69,9 @@ When called this method will run beginning from the opening curly brace and will
 
 # Identifiers
 
-An identifier can be simply identified as a name.  An identifier is anything that is used to identify a class, variable, method, or anything else.  For a quick example, if we created a new string variable called _mystring_ like below: ```csharp
+An identifier can be simply identified as a name.  An identifier is anything that is used to identify a class, variable, method, or anything else.  For a quick example, if we created a new string variable called _mystring_ like below: 
+
+```csharp
 string mystring = "This is just some random string";
 ```
 
@@ -91,4 +95,4 @@ Please see the table below for a current list of all C# reserved keywords.
 | --- |
 | abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock | long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using virtual void volatile while |
 
-If you like these tutorials please reach out and give me some feed back! Let me know what you like and what could be done better either through [here](https://dccoder.wordpress.com/contact/) or through [Facebook](https://www.facebook.com/dccoder90/) and stay tuned for part 3!
+If you like these tutorials please reach out and give me some feed back! Let me know what you like and what could be done better either through [here](https://www.linkedin.com/in/dccoder/) and stay tuned for part 3!

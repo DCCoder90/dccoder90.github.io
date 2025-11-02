@@ -7,7 +7,7 @@ categories:
 tags: 
   - "net"
   - "beginners"
-  - "c"
+  - "c#"
   - "tutorial"
 headerimage: "b4ab2-c-tutorial-for-absolute-beginner-360x240-1.webp"
 ---
@@ -122,9 +122,16 @@ There are two ways of using comments.
 Using our example above this would have achieved the same results.
 
 ```csharp
-
-using System; namespace HelloWorldApplication{   public class HelloWorld{     public static void Main(string[] args){       // my first program in C#       Console.WriteLine("Hello World");       Console.ReadKey();     }   } }
-
+using System; 
+namespace HelloWorldApplication{   
+    public class HelloWorld{     
+        public static void Main(string[] args){       
+            // my first program in C#       
+            Console.WriteLine("Hello World");       
+            Console.ReadKey();     
+        }   
+    } 
+}
 ```
 
 ## Logic
@@ -133,9 +140,19 @@ Now for the final piece of the puzzle I'd like to call your attention to lines 6
 
 ```csharp
 
-using System; namespace HelloWorldApplication{   public class HelloWorld{     public static void Main(string[] args){       // my first program in C#       Console.WriteLine("Hello World");       Console.ReadKey();     }   } }
+using System; 
+namespace HelloWorldApplication{   
+    public class HelloWorld{     
+        public static void Main(string[] args){       
+            // my first program in C#       
+            Console.WriteLine("Hello World");       
+            Console.ReadKey();     
+        }   
+    } 
+}
+``` 
 
-``` On line 6 you can see a call to Console.WriteLine("Hello World").  What this is doing is calling the static class "Console" and calling the static method within this class called [WriteLine](https://msdn.microsoft.com/en-us/library/system.console.writeline(v=vs.110).aspx).  Along with this we are passing in a [string](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/) as a parameter.
+On line 6 you can see a call to Console.WriteLine("Hello World").  What this is doing is calling the static class "Console" and calling the static method within this class called [WriteLine](https://msdn.microsoft.com/en-us/library/system.console.writeline(v=vs.110).aspx).  Along with this we are passing in a [string](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/) as a parameter.
 
 What this line is going to do is print the text "Hello World" to the console.  Nothing more, nothing less.
 
