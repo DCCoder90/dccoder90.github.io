@@ -1,0 +1,31 @@
+---
+export async function getStaticPaths() {
+  // Get all posts
+  const posts = await Astro.glob('./posts/**/*.md');
+
+  // Generate a route for each post using its permalink
+  return posts.map((post) => {
+    // Get permalink from frontmatter
+    const permalink = post.frontmatter.permalink;
+
+    if (!permalink) {
+      console.warn(`Post "${post.frontmatter.title}" is missing a permalink`);
+      return null;
+    }
+
+    // Remove leading and trailing slashes for the param
+    const cleanPermalink = permalink.replace(/^\/|\/$/g, '');
+
+    return {
+      params: { permalink: cleanPermalink },
+      props: {
+        Content: post.Content,
+      },
+    };
+  }).filter(Boolean);
+}
+
+const { Content } = Astro.props;
+---
+
+<Content />

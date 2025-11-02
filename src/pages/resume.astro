@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Resume";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+---
+<BaseLayout pageTitle={pageTitle}>
+        <main class="rounded-2xl shadow-2xl p-6 sm:p-10">
+            
+            <header class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+                    Ernest Eugene Mallett
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-x-6 gap-y-2 mt-4 text-lg">
+                    <a href="https://www.linkedin.com/in/dccoder/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:underline font-medium">
+                        <!-- LinkedIn Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/DCCoder90" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:underline font-medium">
+                        <!-- GitHub Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+            </header>
+
+            <hr class="mb-8 border-gray-200">
+
+            <!-- Summary Section -->
+            <section id="summary" class="mb-10">
+                <h2 class="text-3xl font-semibold mb-5">Summary</h2>
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    A results-driven and forward-thinking Principal Engineer with extensive experience in cloud architecture, platform engineering, and leading high-impact technical initiatives. Proven ability to guide complex projects from conception to completion, including large-scale cloud migrations and pioneering generative AI applications. Seeking a Staff, Principal, or Director-level role to leverage deep technical expertise in AI and distributed systems to build innovative products and high-performing engineering teams.
+                </p>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills" class="mb-10">
+                <h2 class="text-3xl font-semibold mb-5">Technical Skills</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Cloud/DevOps:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">AWS</span><span class="skill-badge">Azure</span><span class="skill-badge">Terraform</span><span class="skill-badge">Packer</span><span class="skill-badge">Docker</span><span class="skill-badge">Kubernetes</span><span class="skill-badge">GitHub Actions</span><span class="skill-badge">Azure DevOps</span><span class="skill-badge">Consul</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Languages:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">C#</span><span class="skill-badge">Go</span><span class="skill-badge">Python</span><span class="skill-badge">JavaScript</span><span class="skill-badge">TypeScript</span><span class="skill-badge">SQL</span><span class="skill-badge">Cypher</span><span class="skill-badge">PHP</span><span class="skill-badge">C++</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Frameworks:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">.NET</span><span class="skill-badge">ASP.NET</span><span class="skill-badge">Blazor</span><span class="skill-badge">Svelte</span><span class="skill-badge">Tailwind</span><span class="skill-badge">Bootstrap</span><span class="skill-badge">Node.js</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Databases:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">MySQL</span><span class="skill-badge">PostgreSQL</span><span class="skill-badge">SQL Server</span><span class="skill-badge">SQLite</span><span class="skill-badge">CouchDB</span><span class="skill-badge">DynamoDB</span><span class="skill-badge">MongoDB</span><span class="skill-badge">Redis</span><span class="skill-badge">Neo4j</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Tools:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">JetBrains IDEs</span><span class="skill-badge">VS Code</span><span class="skill-badge">Postman</span><span class="skill-badge">Elasticsearch</span><span class="skill-badge">GitKraken</span><span class="skill-badge">Wireshark</span><span class="skill-badge">Visual Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section id="experience" class="mb-10">
+                <h2 class="text-3xl font-semibold mb-6">Professional Experience</h2>
+                <div class="space-y-10">
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Principal Software Engineer</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">August 2022 - Present</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">Elsevier</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Defined and drove the long-term technical vision and architectural strategy across multiple product teams, ensuring alignment with business objectives.</li>
+                            <li>Architected a new, highly scalable system on AWS using Terraform, which improved system performance and cut infrastructure costs by 15%.</li>
+                            <li>Played an integral role in planning and leading the complete migration of on-premises infrastructure to the AWS cloud, successfully achieving 100% uptime during the process.</li>
+                            <li>Championed modern DevOps practices by standardizing CI/CD pipelines in GitHub Actions, reducing average deployment time from over 60 minutes to 35 minutes.</li>
+                            <li>Pioneered the integration of AI-assisted development tools into the engineering workflow, enhancing developer productivity in test creation, documentation, and code optimization.</li>
+                            <li>Conducted a comprehensive security audit across all codebases, implementing automated secret and vulnerability detection that identified and remediated numerous exposed credentials.</li>
+                            <li>As part of a cross-functional cost-savings team, contributed to measures that reduced annual operational costs by $1.3M.</li>
+                            <li>Served as a technical authority and mentor for senior engineers, fostering a culture of technical excellence, innovation, and continuous improvement.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Sr. Software Engineer / Team Lead</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">January 2022 - August 2022</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">ComputaCenter US</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Provided technical leadership and mentorship to the development team, establishing best practices for software quality and guiding successful project delivery.</li>
+                            <li>Acted as the primary technical liaison between customers, solutions architects, and engineering teams to translate complex business requirements into actionable technical specifications.</li>
+                            <li>Built and maintained operational tools, microservices, and automation scripts, actively troubleshooting and resolving issues in testing and production to ensure system integrity.</li>
+                            <li>Navigated complex customer ecosystems to install and configure custom applications, resolving cross-platform compatibility issues and adhering to diverse security postures.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Sr. Software Engineer</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">October 2019 - January 2022</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">Pivot Technology Solutions (Acquired by Computacenter)</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Architected and developed custom products and integrations for full-service contact center solutions, leveraging C#, .NET Core, Cisco (UCCX/UCCE), and Twilio.</li>
+                            <li>Engineered and deployed highly-available, redundant services on cloud platforms, including AWS and Azure.</li>
+                            <li>Implemented robust security mechanisms to protect sensitive information, ensuring strict compliance with standards like PCI-DSS and ISO 27001.</li>
+                            <li>Authored comprehensive technical documentation for products and solutions to improve maintainability and minimize end-user confusion.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Integrations Software Engineer</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">November 2018 - October 2019</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">LocalMed</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Engineered and maintained a variety of components including Windows services, microservices, and internal NuGet packages.</li>
+                            <li>Performed production support by debugging and resolving issues in live software systems to ensure operational stability within a complex, security-focused medical environment.</li>
+                            <li>Ensured all developed software strictly complied with corporate and government policies for security and privacy.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Software Engineer</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">April 2018 - November 2018</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">The SSI Group, Inc.</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Contributed to the strategic migration of legacy products to a modern, cloud-based SaaS model.</li>
+                            <li>Developed software in a highly regulated healthcare environment, ensuring strict compliance with HIPAA and HITRUST.</li>
+                            <li>Developed and maintained full-stack applications across the entire SDLC, utilizing C#, .NET, TypeScript, LESS/CSS, and FoxPro.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Software Developer / Team Lead</h3>
+                            <span class="text-base font-medium text-gray-600 dark:text-gray-400 sm:text-right mt-1 sm:mt-0 whitespace-nowrap">September 2017 - April 2018</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">Provalus</h4>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Provided technical leadership and mentorship to a new development team, establishing best practices for software quality and guiding project delivery.</li>
+                            <li>Collaborated with business analysts and software architects to plan, design, develop, and test web and desktop-based business applications.</li>
+                            <li>Played a key role in the migration of legacy applications to current technologies, including refining and tuning integrations between systems.</li>
+                        </ul>
+
+                        <h5 class="text-lg font-semibold text-gray-800 dark:text-white mt-4 mb-2">Software Development Instructor <span class="text-base font-medium text-gray-600 dark:text-gray-400"> (Jul 2017 → Sep 2017)</span></h5>
+                        <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <li>Provided technical leadership, coaching, and mentorship to new developers beginning their careers in software development.</li>
+                            <li>Designed, tailored, and structured comprehensive lesson plans to provide high-quality, practical knowledge to students.</li>
+                            <li>Delivered hands-on instruction and support, ensuring all students understood the material from both a theoretical and practical standpoint.</li>
+                            <li>Remained on-call 24/7 to provide continuous guidance and assist students with complex development issues.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- Certifications Section -->
+            <section id="certifications" class="mb-10">
+                <h2 class="text-3xl font-semibold mb-5">Certifications</h2>
+                <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <li><strong>HashiCorp Certified: Consul Associate</strong> - Achieved May 2021</li>
+                    <li><strong>Six-Sigma White Belt</strong> - Achieved April 2021</li>
+                    <li><strong>HashiCorp Certified: Vault Associate</strong> - Achieved July 2020</li>
+                    <li><strong>HashiCorp Certified: Terraform Associate</strong> - Achieved July 2020</li>
+                    <li><strong>Microsoft Certified: Azure Fundamentals</strong> - Achieved August 2019</li>
+                    <li><strong>AWS Certified Developer - Associate</strong> - Achieved August 2019</li>
+                    <li><strong>AWS Certified Cloud Practitioner</strong> - Achieved August 2019</li>
+                    <li><strong>Professional Scrum Developer</strong> - Achieved March 2018</li>
+                </ul>
+            </section>
+
+            <!-- Projects & Interests Section -->
+            <section id="projects">
+                <h2 class="text-3xl font-semibold mb-5">Projects & Interests</h2>
+                <ul class="list-disc list-outside space-y-2 ml-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <li><a href="https://stackoverflow.com/users/8333554/dccoder" target="_blank" rel="noopener noreferrer" class="hover:underline font-medium">Stack Overflow:</a> Active contributor in the C# community with 35 answers written.</li>
+                    <li><a href="https://github.com/DCCoder90/dengine" target="_blank" rel="noopener noreferrer" class="hover:underline font-medium">dEngine:</a> A personal passion project building a 2D game engine in C++, now exploring a rewrite in Rust.</li>
+                    <li><a href="httpsStorage: //github.com/DCCoder90/system-design" target="_blank" rel="noopener noreferrer" class="hover:underline font-medium">System Design</a> & <a href="https://github.com/DCCoder90/home-net" target="_blank" rel="noopener noreferrer" class="hover:underline font-medium">Home Networking:</a> Actively maintaining personal GitHub repositories for system design exercises and home lab automation.</li>
+                </ul>
+            </section>
+
+        </main>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const allPosts = Object.values(import.meta.glob('../posts/**/*.md', { eager: true }));
+const tags = [...new Set(allPosts
+  .map((post: any) => post.frontmatter.tags)
+  .filter(tags => Array.isArray(tags))
+  .flat())].sort();
+
+// Count posts per tag
+const tagCounts = tags.map(tag => ({
+  name: tag,
+  count: allPosts.filter((post: any) => post.frontmatter.tags && Array.isArray(post.frontmatter.tags) && post.frontmatter.tags.includes(tag)).length
+}));
+
+const pageTitle = "All Tags";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="inline-flex items-center justify-center mb-4 sm:mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 flex items-center justify-center shadow-lg">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+          </svg>
+        </div>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-neutral-100 mb-3 sm:mb-4 leading-tight px-4">
+        All Tags
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed px-4">
+        Browse posts by topic
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 sm:gap-4 justify-center">
+      {tagCounts.map(({ name, count }) => (
+        <a
+          href={`/tags/${name}`}
+          class="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-gray-900 dark:text-neutral-100 bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700 rounded-full hover:bg-gray-50 dark:hover:bg-neutral-700 hover:border-[#0969da] dark:hover:border-teal-400 hover:text-[#0969da] dark:hover:text-teal-400 transition-all shadow-sm hover:shadow-md"
+        >
+          <span>{name}</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 text-xs font-semibold rounded-full bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-neutral-300">
+            {count}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

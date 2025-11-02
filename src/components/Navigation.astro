@@ -1,0 +1,30 @@
+---
+import { siteConfig } from "../config";
+
+interface Props {
+  isMobile?: boolean;
+}
+
+const { isMobile = false } = Astro.props;
+
+const navItems = siteConfig.navigation;
+
+const baseClasses = "text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium";
+const desktopClasses = "text-sm sm:text-base";
+const mobileClasses = "block py-2";
+---
+
+<nav>
+  <ul class={isMobile ? "flex flex-col space-y-3" : "flex items-center gap-4 sm:gap-6 md:gap-8 justify-center flex-wrap"}>
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class={`${baseClasses} ${isMobile ? mobileClasses : desktopClasses}`}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
