@@ -30,13 +30,16 @@ const searchIndex = [...postIndex, ...projectIndex];
   <!-- Search Button (Mobile & Desktop) -->
   <button
     id="search-button"
-    class="p-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors"
+    class="flex items-center gap-2 p-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors group"
     aria-label="Search"
-    title="Search posts"
+    title="Search posts (Ctrl+K or ⌘K)"
   >
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
     </svg>
+    <span class="hidden md:inline-flex items-center gap-1 text-xs px-2 py-1 rounded border border-gray-300 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 bg-gray-50 dark:bg-neutral-800/50 group-hover:border-[#0969da] dark:group-hover:border-teal-400 dark:group-hover:text-teal-300 transition-colors">
+      <kbd class="font-sans">⌘K</kbd>
+    </span>
   </button>
 
   <!-- Search Modal -->
@@ -60,10 +63,13 @@ const searchIndex = [...postIndex, ...projectIndex];
           <input
             type="text"
             id="search-input"
-            placeholder="Search posts and projects by title, description, or tags..."
+            placeholder="Search posts and projects..."
             class="w-full pl-12 pr-12 py-4 text-lg bg-transparent text-gray-900 dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none"
             autocomplete="off"
           />
+          <div class="absolute right-14 top-1/2 transform -translate-y-1/2 hidden sm:flex items-center gap-1 text-xs text-gray-400 dark:text-neutral-400">
+            <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 font-mono text-xs text-gray-600 dark:text-neutral-300">Esc</kbd>
+          </div>
           <button
             id="search-close"
             class="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-neutral-300"
@@ -77,9 +83,25 @@ const searchIndex = [...postIndex, ...projectIndex];
 
         <!-- Search Results -->
         <div id="search-results" class="max-h-[60vh] overflow-y-auto p-4">
-          <p class="text-sm text-gray-500 dark:text-neutral-400 text-center py-8">
-            Start typing to search...
-          </p>
+          <div class="text-center py-8 space-y-3">
+            <p class="text-sm text-gray-500 dark:text-neutral-400">
+              Start typing to search...
+            </p>
+            <div class="flex items-center justify-center gap-4 text-xs text-gray-400 dark:text-neutral-400">
+              <span class="flex items-center gap-1">
+                <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">↑↓</kbd>
+                Navigate
+              </span>
+              <span class="flex items-center gap-1">
+                <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">Enter</kbd>
+                Select
+              </span>
+              <span class="flex items-center gap-1">
+                <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">Esc</kbd>
+                Close
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -89,12 +111,16 @@ const searchIndex = [...postIndex, ...projectIndex];
   <div class="hidden">
     <span class="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300"></span>
     <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"></span>
-    <span class="text-gray-600 dark:text-neutral-400"></span>
+    <span class="text-gray-600 dark:text-neutral-400 dark:text-neutral-300"></span>
     <span class="text-gray-500 dark:text-neutral-500"></span>
     <span class="text-gray-900 dark:text-neutral-100"></span>
     <span class="text-gray-300 dark:text-neutral-600"></span>
     <span class="hover:bg-gray-50 dark:hover:bg-neutral-800"></span>
+    <span class="bg-gray-100 dark:bg-neutral-800"></span>
     <span class="border-gray-100 dark:border-neutral-800"></span>
+    <span class="font-mono font-sans space-y-3"></span>
+    <span class="bg-gray-100 dark:bg-neutral-800/80 dark:bg-neutral-800/50 bg-gray-50 border-gray-300 dark:border-neutral-600 dark:border-neutral-700"></span>
+    <span class="dark:group-hover:text-teal-300"></span>
   </div>
 </div>
 
@@ -105,9 +131,44 @@ const searchIndex = [...postIndex, ...projectIndex];
   const searchClose = document.getElementById('search-close');
   const searchResults = document.getElementById('search-results');
 
+  // Track selected result for keyboard navigation
+  let selectedIndex = -1;
+
+  // Detect OS for keyboard shortcut display
+  const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+  const shortcutKey = isMac ? '⌘' : 'Ctrl';
+
+  // Update keyboard shortcut display based on OS
+  if (searchButton) {
+    const kbd = searchButton.querySelector('kbd');
+    if (kbd) kbd.textContent = `${shortcutKey}K`;
+  }
+
+  // Update selected result styling
+  function updateSelectedResult() {
+    const resultLinks = searchResults?.querySelectorAll('a[data-result-index]');
+    if (!resultLinks) return;
+
+    resultLinks.forEach((link, index) => {
+      if (index === selectedIndex) {
+        link.classList.add('bg-gray-100', 'dark:bg-neutral-800');
+        link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      } else {
+        link.classList.remove('bg-gray-100', 'dark:bg-neutral-800');
+      }
+    });
+  }
+
   // Open search modal
   function openSearch() {
     searchModal?.classList.remove('hidden');
+
+    // Update keyboard shortcut hint in modal
+    const kbdHints = searchModal?.querySelectorAll('.absolute.right-14 kbd');
+    if (kbdHints && kbdHints.length === 2) {
+      kbdHints[0].textContent = isMac ? '⌘' : 'Ctrl';
+    }
+
     setTimeout(() => searchInput?.focus(), 100);
   }
 
@@ -115,13 +176,36 @@ const searchIndex = [...postIndex, ...projectIndex];
   function closeSearch() {
     searchModal?.classList.add('hidden');
     if (searchInput) searchInput.value = '';
+    selectedIndex = -1; // Reset selection
     if (searchResults) {
-      searchResults.innerHTML = '<p class="text-sm text-gray-500 dark:text-neutral-400 text-center py-8">Start typing to search...</p>';
+      searchResults.innerHTML = `
+        <div class="text-center py-8 space-y-3">
+          <p class="text-sm text-gray-500 dark:text-neutral-400">
+            Start typing to search...
+          </p>
+          <div class="flex items-center justify-center gap-4 text-xs text-gray-400 dark:text-neutral-400">
+            <span class="flex items-center gap-1">
+              <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">↑↓</kbd>
+              Navigate
+            </span>
+            <span class="flex items-center gap-1">
+              <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">Enter</kbd>
+              Select
+            </span>
+            <span class="flex items-center gap-1">
+              <kbd class="px-2 py-1 bg-gray-100 dark:bg-neutral-800/80 rounded border border-gray-300 dark:border-neutral-600 text-gray-600 dark:text-neutral-300">Esc</kbd>
+              Close
+            </span>
+          </div>
+        </div>
+      `;
     }
   }
 
   // Search function
   function performSearch(query) {
+    selectedIndex = -1; // Reset selection on new search
+
     if (!query || query.trim().length < 2) {
       searchResults.innerHTML = '<p class="text-sm text-gray-500 dark:text-neutral-400 text-center py-8">Type at least 2 characters to search...</p>';
       return;
@@ -153,7 +237,7 @@ const searchIndex = [...postIndex, ...projectIndex];
     const projectCount = results.filter(r => r.type === 'project').length;
 
     // Display results
-    const resultsHTML = results.map(item => {
+    const resultsHTML = results.map((item, index) => {
       const isProject = item.type === 'project';
 
       // Format date based on type
@@ -178,7 +262,7 @@ const searchIndex = [...postIndex, ...projectIndex];
         : '<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">Post</span>';
 
       return `
-        <a href="${item.url}" class="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors border-b border-gray-100 dark:border-neutral-800 last:border-0" ${isProject ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+        <a href="${item.url}" data-result-index="${index}" class="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors border-b border-gray-100 dark:border-neutral-800 last:border-0" ${isProject ? 'target="_blank" rel="noopener noreferrer"' : ''}>
           <div class="flex items-start gap-2 mb-1">
             ${typeBadge}
             <h3 class="font-semibold text-gray-900 dark:text-neutral-100 flex-1">${item.title}</h3>
@@ -238,10 +322,23 @@ const searchIndex = [...postIndex, ...projectIndex];
 
   // Navigate results with arrow keys
   searchInput?.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const firstResult = searchResults?.querySelector('a');
-      if (firstResult) {
-        firstResult.click();
+    const resultLinks = searchResults?.querySelectorAll('a[data-result-index]');
+    if (!resultLinks || resultLinks.length === 0) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, resultLinks.length - 1);
+      updateSelectedResult();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, -1);
+      updateSelectedResult();
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (selectedIndex >= 0 && resultLinks[selectedIndex]) {
+        resultLinks[selectedIndex].click();
+      } else if (resultLinks.length > 0) {
+        resultLinks[0].click();
       }
     }
   });
