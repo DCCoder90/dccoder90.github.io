@@ -1,44 +1,30 @@
 ---
 import { siteConfig } from "../config";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
-const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+interface Props {
+  isMobile?: boolean;
+}
+
+const { isMobile = false } = Astro.props;
+
+const navItems = siteConfig.navigation;
+
+const baseClasses = "text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium";
+const desktopClasses = "text-sm sm:text-base";
+const mobileClasses = "block py-2";
 ---
-  <nav>
-    <ul class="flex items-center gap-4 sm:gap-6 md:gap-8 justify-center flex-wrap">
-        <li>
-        <a
-          href="/"
-          class="text-sm sm:text-base text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-        >
-          Home
-        </a>
-      </li>
+
+<nav>
+  <ul class={isMobile ? "flex flex-col space-y-3" : "flex items-center gap-4 sm:gap-6 md:gap-8 justify-center flex-wrap"}>
+    {navItems.map((item) => (
       <li>
         <a
-          href="/about"
-          class="text-sm sm:text-base text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
+          href={item.href}
+          class={`${baseClasses} ${isMobile ? mobileClasses : desktopClasses}`}
         >
-          About
+          {item.label}
         </a>
       </li>
-          <li>
-            <a
-              href="/projects"
-              class="text-sm sm:text-base text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/resume"
-              class="text-sm sm:text-base text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-            >
-              Resume
-            </a>
-          </li>
-    </ul>
-  </nav>
+    ))}
+  </ul>
+</nav>

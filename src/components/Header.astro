@@ -40,42 +40,9 @@ import Search from "./Search.astro";
     id="mobile-menu"
     class="md:hidden hidden bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-neutral-700"
   >
-    <nav class="px-4 py-4">
-      <ul class="flex flex-col space-y-3">
-        <li>
-          <a
-            href="/"
-            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/about"
-            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="/projects"
-            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            href="/resume"
-            class="block py-2 text-gray-800 dark:text-neutral-300 hover:text-[#0969da] dark:hover:text-teal-400 transition-colors font-medium"
-          >
-            Resume
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div class="px-4 py-4">
+      <Navigation isMobile={true} />
+    </div>
   </div>
 </header>
 
