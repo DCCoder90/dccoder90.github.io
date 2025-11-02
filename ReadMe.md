@@ -150,6 +150,36 @@ Dark mode is class-based. Apply dark mode styles using Tailwind's `dark:` modifi
 </div>
 ```
 
+## Future Improvements
+
+I'm debating on adding the following features make the site a little better:
+
+### SEO
+- **Sitemap.xml Generation**
+- **robots.txt**
+- **Breadcrumb Navigation**
+
+### Content
+- **Social Share Buttons**
+- **Reading Time Estimates**: Auto calculated reading time for each post
+- **Related Posts**: Show 3-4 related articles at end of posts based on shared tags
+- **RSS Feed Discovery**: Add RSS links and `<link rel="alternate">` tags
+
+### Accessibility
+- Skip-to-Content Link
+- Image Lazy Loading
+- Table of Contents
+
+### Professional Features
+- **Code Copy Buttons**: One-click copy for code blocks
+- **Author Bio Component**: Author section at end of posts
+- **Post Series/Collections**: UI for navigating multi-part content
+- **Tags**: Show post counts and weight on tag pages
+- **Print Stylesheet**: To allow for cleaner and more professional view for printed content
+
+### Performance
+- **Update Image Formats**: Convert to WebP/AVIF with fallbacks to reduce bandwidth
+
 ## Contributing
 
 This is a personal portfolio site, but suggestions and bug reports are welcome via GitHub issues.
