@@ -42,10 +42,10 @@ const searchIndex = [...postIndex, ...projectIndex];
     </span>
   </button>
 
-  <!-- Search Modal -->
+  <!-- Search Modal - Moved to body via JavaScript to avoid fixed positioning issues -->
   <div
     id="search-modal"
-    class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-sm"
+    class="hidden fixed inset-0 z-[9999] overflow-y-auto bg-black/50 backdrop-blur-sm"
     role="dialog"
     aria-modal="true"
   >
@@ -161,7 +161,13 @@ const searchIndex = [...postIndex, ...projectIndex];
 
   // Open search modal
   function openSearch() {
+    // Move modal to body if not already ther
+    if (searchModal && searchModal.parentElement !== document.body) {
+      document.body.appendChild(searchModal);
+    }
+
     searchModal?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
 
     // Update keyboard shortcut hint in modal
     const kbdHints = searchModal?.querySelectorAll('.absolute.right-14 kbd');
@@ -175,6 +181,8 @@ const searchIndex = [...postIndex, ...projectIndex];
   // Close search modal
   function closeSearch() {
     searchModal?.classList.add('hidden');
+    // Restore body scroll when modal is closed
+    document.body.style.overflow = '';
     if (searchInput) searchInput.value = '';
     selectedIndex = -1; // Reset selection
     if (searchResults) {
