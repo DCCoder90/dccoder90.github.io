@@ -1,29 +1,6 @@
 ---
-import { projects } from '../projects';
-
-// Get all posts for search index
-const allPosts = await Astro.glob('../pages/posts/**/*.md');
-const postIndex = allPosts.map(post => ({
-  type: 'post',
-  title: post.frontmatter.title,
-  description: post.frontmatter.description || '',
-  tags: post.frontmatter.tags || [],
-  date: post.frontmatter.date,
-  url: post.frontmatter.permalink || post.url,
-}));
-
-// Get all projects for search index
-const projectIndex = projects.map(project => ({
-  type: 'project',
-  title: project.name,
-  description: project.description,
-  tags: project.tags,
-  date: project.startDate,
-  url: project.link || '/projects',
-}));
-
-// Combine both indexes
-const searchIndex = [...postIndex, ...projectIndex];
+// Import prebuilt search index
+import { searchIndex } from '../lib/searchIndex';
 ---
 
 <div class="relative search-container">
