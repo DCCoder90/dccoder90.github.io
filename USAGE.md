@@ -299,7 +299,8 @@ description: "Brief description of the project"
 tags: ["C#", "Azure", "API"]
 start: "2023-01"
 end: "2024-06"              # Use "Present" for ongoing projects
-github: "https://github.com/yourusername/project"  # Optional
+github: "https://github.com/yourusername/project"  # Optional, displays GitHub icon
+other: "https://example.com/project"               # Optional, displays external link icon
 permalink: "/projects/custom-url/"  # Optional
 projectimage: "project-preview.jpg"  # Optional, for grid preview cards
 headerimage: "project-header.jpg"    # Optional, for project page header
@@ -329,7 +330,8 @@ Describe challenges you faced...
 ### Optional Fields
 
 - `end`: End date or "Present" for ongoing projects
-- `github`: GitHub repository URL (displays GitHub icon)
+- `github`: GitHub repository URL (displays GitHub icon on preview cards)
+- `other`: External link URL (displays external link icon on preview cards)
 - `permalink`: Custom URL
 - `projectimage`: Image for preview cards (defaults to placeholder if not provided)
 - `headerimage`: Image for project page header (no header image if not provided)
