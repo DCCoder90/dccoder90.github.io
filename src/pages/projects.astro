@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { projects, projectsPerRow } from '../projects';
+import defaultProjectImage from '../assets/default-project.jpg';
 const pageTitle = "Projects";
 
 // Dynamically import all images from assets/projects
@@ -28,6 +29,9 @@ const projectsWithImages = projects.map(project => {
         projectImageUrl = project.image;
       }
     }
+  } else {
+    // Use default project image if no image is provided
+    projectImage = defaultProjectImage;
   }
 
   return {
@@ -79,8 +83,7 @@ const allTags = [...new Set(projects.flatMap(project => project.tags))].sort();
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projectsPerRow} gap-6 sm:gap-8" id="projects-grid">
       {projectsWithImages.map(project => (
         <div class="project-card bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-tags={JSON.stringify(project.tags)}>
-          {(project.optimizedImage || project.imageUrl) && (
-            <div class="relative w-full h-40 sm:h-48 overflow-hidden">
+          <div class="relative w-full h-40 sm:h-48 overflow-hidden">
               {project.link ? (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
                   {project.optimizedImage ? (
@@ -129,7 +132,6 @@ const allTags = [...new Set(projects.flatMap(project => project.tags))].sort();
                 </>
               )}
             </div>
-          )}
           <div class="p-4 sm:p-6">
             <h2 class="font-bold text-lg sm:text-xl mb-2 text-gray-900 dark:text-neutral-100">{project.name}</h2>
             <p class="text-gray-700 dark:text-gray-300 text-sm sm:text-base mb-4 line-clamp-3">{project.description}</p>
