@@ -17,6 +17,13 @@ export default defineConfig({
     },
     remarkPlugins: [remarkAddLayout, addPermalink, imagePaths],
   },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    },
+    domains: [],
+    remotePatterns: [],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

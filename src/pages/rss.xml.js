@@ -5,6 +5,7 @@ export async function GET(context) {
   const posts = import.meta.glob('./posts/**/*.md', { eager: true });
 
   const sortedPosts = Object.values(posts)
+    .filter(post => post && post.frontmatter && post.frontmatter.title && post.frontmatter.date)
     .map(post => ({
       title: post.frontmatter.title,
       description: post.frontmatter.description || post.frontmatter.excerpt || '',

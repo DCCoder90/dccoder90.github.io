@@ -28,7 +28,7 @@ Now I’m sure even the most basic of beginners can identify this modulation…t
 
 Now, armed with this I decided to take a closer look at the bits.  After looking at them for a few minutes and playing around with the DIP switches on the back of the controller (next to the battery) I was able to determine the first bit had to be a parity bit, the four after it where the ID, and the remaining where the actual command that is sent to the fan.  I plugged tshem all into a spreadsheet for a little eaier reading.
 
-![](Organized.png)
+<!-- ![](Organized.png) Image file missing -->
 
 _Note: As you can see the first row and the last row contain the same command but different ID, this is because I pressed the same button for each, but the DIP switches were in different positions (to select a different fan)._
 

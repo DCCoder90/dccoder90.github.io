@@ -13,15 +13,17 @@ export interface SearchItem {
 // Get all posts at build-time
 const allPosts = import.meta.glob('../pages/posts/**/*.md', { eager: true });
 
-// Build post index
-const postIndex: SearchItem[] = Object.values(allPosts).map((post: any) => ({
-  type: 'post' as const,
-  title: post.frontmatter.title,
-  description: post.frontmatter.description || '',
-  tags: post.frontmatter.tags || [],
-  date: post.frontmatter.date,
-  url: post.frontmatter.permalink || post.url,
-}));
+// Build post index - filter out any modules without frontmatter
+const postIndex: SearchItem[] = Object.values(allPosts)
+  .filter((post: any) => post && post.frontmatter && post.frontmatter.title)
+  .map((post: any) => ({
+    type: 'post' as const,
+    title: post.frontmatter.title,
+    description: post.frontmatter.description || '',
+    tags: post.frontmatter.tags || [],
+    date: post.frontmatter.date,
+    url: post.frontmatter.permalink || post.url,
+  }));
 
 // Build project index
 const projectIndex: SearchItem[] = projects.map(project => ({
