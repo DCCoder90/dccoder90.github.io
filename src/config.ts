@@ -5,7 +5,7 @@ export const siteConfig = {
   description: "Welcome to my little corner of the internet where I post thoughts, and stuff",
   hero: {
     title: "Welcome to My Corner of the Internet",
-    description: "I'm a software developer who loves to learn and build new things. Here, I share my thoughts on technology, programming, and everything in between.",
+    description: "I'm a software engineer who loves to learn and build new things. Here, I share my thoughts on technology, programming, and everything in between.",
   },
   navigation: [
     { href: "/", label: "Home" },
@@ -18,4 +18,5 @@ export const siteConfig = {
     github: "https://github.com/DCCoder90",
   },
   postsPerPage: 5,
+  projectsPerRow: 3,
 }

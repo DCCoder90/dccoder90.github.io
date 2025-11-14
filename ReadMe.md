@@ -94,7 +94,7 @@ author: "Your Name"                   # Optional (defaults to site config)
 
 ### Images
 
-Place images in: `public/imgs/posts/YYYY/MM/DD/`
+Place images in: `src/assets/posts/YYYY/MM/DD/`
 
 Reference in markdown:
 ```markdown
@@ -102,30 +102,6 @@ Reference in markdown:
 ```
 
 The image path will automatically be rewritten to match the post's date.
-
-## Deployment
-
-### Automatic Deployment
-
-The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch via GitHub Actions.
-
-### Manual Deployment
-
-Trigger the deployment workflow manually from the GitHub Actions tab.
-
-### CI/CD Pipeline
-
-- **Pull Requests**: Automatically validated via CI workflow (build only)
-- **Main Branch**: Automatically built and deployed to GitHub Pages
-
-## PWA Features
-
-The site functions as a Progressive Web App with:
-
-- **Offline Support**: Cache-first strategy for assets, network-first for pages
-- **Installable**: Can be added to home screen on mobile devices
-- **Fast Loading**: Caching of visited pages
-- **Auto-Updates**: Cache refreshes on new deployments
 
 ## Configuration
 

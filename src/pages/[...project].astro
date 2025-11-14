@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectPreview from "../components/ProjectPreview.astro";
+import Pagination from "../components/Pagination.astro";
+import { siteConfig } from "../config.ts";
+
+export async function getStaticPaths({ paginate }) {
+  const allProjects = await Astro.glob("./projects/*.md");
+  // Filter out any posts without frontmatter or date
+  const validProjects = allProjects.filter(project => project && project.frontmatter && project.frontmatter.date);
+  const sortedProjects = validProjects.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
+  return paginate(sortedProjects, { pageSize: siteConfig.projectsPerRow });
+}
+
+const { page } = Astro.props;
+const pageTitle = `Projects - Page ${page.currentPage}`;
+---
+<BaseLayout pageTitle={pageTitle}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+
+    <div class="space-y-6 sm:space-y-8 md:space-y-10">
+      {page.data.map(project => <ProjectPreview project={project} />)}
+    </div>
+
+    <Pagination page={page} />
+
+  </div>
+</BaseLayout>
