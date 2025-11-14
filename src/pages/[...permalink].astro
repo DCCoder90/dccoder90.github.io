@@ -3,13 +3,23 @@ export async function getStaticPaths() {
   // Get all posts
   const posts = await Astro.glob('./posts/**/*.md');
 
-  // Generate a route for each post using its permalink
-  return posts.map((post) => {
+  // Filter out posts without valid frontmatter
+  const validPosts = posts.filter(post => post && post.frontmatter && post.frontmatter.title);
+
+  // Generate a route ONLY for posts with CUSTOM permalinks (not matching file path)
+  return validPosts.map((post) => {
     // Get permalink from frontmatter
     const permalink = post.frontmatter.permalink;
 
+    // Get the file-based URL
+    const fileUrl = post.url;
+
     if (!permalink) {
-      console.warn(`Post "${post.frontmatter.title}" is missing a permalink`);
+      return null;
+    }
+
+    // Skip if permalink matches the file-based route (no custom permalink)
+    if (permalink === fileUrl || permalink + '/' === fileUrl || permalink === fileUrl + '/') {
       return null;
     }
 

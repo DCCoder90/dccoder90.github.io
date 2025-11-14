@@ -1,13 +1,34 @@
 ---
+import { Image } from "astro:assets";
+
 const { post } = Astro.props;
 const tags = post.frontmatter.tags || [];
 const displayTags = Array.isArray(tags) ? tags : [tags];
 
 const [year, month, day] = post.frontmatter.date.split('-');
 
-const headerImageUrl = post.frontmatter.headerimage
-  ? (post.frontmatter.headerimage.startsWith('/') || post.frontmatter.headerimage.includes('://') ? post.frontmatter.headerimage : `/imgs/posts/${year}/${month}/${day}/${post.frontmatter.headerimage}`)
-  : null;
+// Dynamically import all images from assets/posts
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/posts/**/*.{jpeg,jpg,png,gif,webp,svg}', { eager: true });
+
+// Get header image - support both external URLs and local assets
+let headerImage = null;
+let headerImageUrl = null;
+
+if (post.frontmatter.headerimage) {
+  if (post.frontmatter.headerimage.startsWith('/') || post.frontmatter.headerimage.includes('://')) {
+    // External URL or absolute path
+    headerImageUrl = post.frontmatter.headerimage;
+  } else {
+    // Try to load from src/assets first (optimized)
+    const imagePath = `/src/assets/posts/${year}/${month}/${day}/${post.frontmatter.headerimage}`;
+    if (images[imagePath]) {
+      headerImage = images[imagePath].default;
+    } else {
+      // Fallback to public folder
+      headerImageUrl = `/imgs/posts/${year}/${month}/${day}/${post.frontmatter.headerimage}`;
+    }
+  }
+}
 
 const postUrl = post.frontmatter.permalink || post.url;
 ---
@@ -15,8 +36,25 @@ const postUrl = post.frontmatter.permalink || post.url;
 <article class="group relative flex flex-col bg-white dark:bg-[#262626] rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 overflow-hidden">
   <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-  {headerImageUrl && (
-    <img src={headerImageUrl} alt={post.frontmatter.title} class="w-full h-48 object-cover rounded-t-xl" />
+  {(headerImage || headerImageUrl) && (
+    <div class="relative w-full h-48 overflow-hidden">
+      {headerImage ? (
+        <Image
+          src={headerImage}
+          alt={post.frontmatter.title}
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 640px) 400px, (max-width: 1024px) 600px, 800px"
+        />
+      ) : (
+        <img
+          src={headerImageUrl}
+          alt={post.frontmatter.title}
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+      )}
+    </div>
   )}
 
   <div class="p-8">

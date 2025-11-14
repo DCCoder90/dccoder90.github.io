@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const allPosts = Object.values(import.meta.glob('../posts/**/*.md', { eager: true }));
+const allPosts = Object.values(import.meta.glob('../posts/**/*.md', { eager: true }))
+  .filter((post: any) => post && post.frontmatter && post.frontmatter.tags);
 const tags = [...new Set(allPosts
   .map((post: any) => post.frontmatter.tags)
   .filter(tags => Array.isArray(tags))
