@@ -19,4 +19,5 @@ export const siteConfig = {
   },
   postsPerPage: 5,
   projectsPerRow: 3,
+  projectsRowsPerPage: 3,
 }
