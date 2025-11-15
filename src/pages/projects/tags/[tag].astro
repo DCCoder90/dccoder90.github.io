@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectPreview from '../../../components/ProjectPreview.astro';
+import { siteConfig } from '../../../config.ts';
+
+export async function getStaticPaths() {
+  const allProjects = Object.values(import.meta.glob('../*.md', { eager: true }))
+    .filter((project: any) => project && project.frontmatter && project.frontmatter.tags);
+
+  const uniqueTags = [...new Set(allProjects
+    .map((project: any) => project.frontmatter.tags)
+    .filter(tags => Array.isArray(tags))
+    .flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredProjects = allProjects
+      .filter((project: any) => project.frontmatter.tags && Array.isArray(project.frontmatter.tags) && project.frontmatter.tags.includes(tag))
+      .sort((a: any, b: any) => new Date(b.frontmatter.start).valueOf() - new Date(a.frontmatter.start).valueOf());
+    return {
+      params: { tag },
+      props: { projects: filteredProjects },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+---
+<BaseLayout pageTitle={`Projects: ${tag}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="inline-flex items-center justify-center mb-4 sm:mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 flex items-center justify-center shadow-lg">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+          </svg>
+        </div>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-neutral-100 mb-3 sm:mb-4 leading-tight px-4">
+        Projects tagged with "{tag}"
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed px-4">
+        {projects.length} {projects.length === 1 ? 'project' : 'projects'} found
+      </p>
+      <div class="mt-6">
+        <a href="/projects" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0969da] dark:text-teal-400 hover:text-[#0550ae] dark:hover:text-teal-300 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to all projects
+        </a>
+      </div>
+    </div>
+
+    <div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${siteConfig.projectsPerRow} gap-6 sm:gap-8`}>
+      {projects.map((project: any) => <ProjectPreview project={project} />)}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import Pagination from "../../components/Pagination.astro";
+import { siteConfig } from "../../config.ts";
+
+export async function getStaticPaths({ paginate }) {
+  const allProjects = await Astro.glob("./*.md");
+  // Filter out any projects without frontmatter or start date
+  const validProjects = allProjects.filter(project => project && project.frontmatter && project.frontmatter.start);
+  const sortedProjects = validProjects.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.start);
+    const dateB = new Date(b.frontmatter.start);
+    return dateB.valueOf() - dateA.valueOf();
+  });
+
+  const projectsPerPage = siteConfig.projectsPerRow * siteConfig.projectsRowsPerPage;
+  return paginate(sortedProjects, { pageSize: projectsPerPage });
+}
+
+const { page } = Astro.props;
+const pageTitle = page.currentPage === 1 ? "Projects" : `Projects - Page ${page.currentPage}`;
+---
+<BaseLayout pageTitle={pageTitle}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <div class="inline-flex items-center justify-center mb-4 sm:mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#0969da] to-[#0550ae] dark:from-teal-400 dark:to-teal-600 flex items-center justify-center shadow-lg">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+        </div>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-neutral-100 mb-3 sm:mb-4 leading-tight px-4">
+        My Projects
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-700 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed px-4">
+        A collection of things I've built over the years.
+      </p>
+    </div>
+
+    <div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${siteConfig.projectsPerRow} gap-6 sm:gap-8 mb-8`}>
+      {page.data.map(project => <ProjectPreview project={project} />)}
+    </div>
+
+    <Pagination page={page} />
+
+  </div>
+</BaseLayout>

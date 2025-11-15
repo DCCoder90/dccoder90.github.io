@@ -1,5 +1,3 @@
-import { projects } from '../projects';
-
 // Type definition for search items
 export interface SearchItem {
   type: 'post' | 'project';
@@ -13,6 +11,9 @@ export interface SearchItem {
 // Get all posts at build-time
 const allPosts = import.meta.glob('../pages/posts/**/*.md', { eager: true });
 
+// Get all projects at build-time
+const allProjects = import.meta.glob('../pages/projects/*.md', { eager: true });
+
 // Build post index - filter out any modules without frontmatter
 const postIndex: SearchItem[] = Object.values(allPosts)
   .filter((post: any) => post && post.frontmatter && post.frontmatter.title)
@@ -25,15 +26,17 @@ const postIndex: SearchItem[] = Object.values(allPosts)
     url: post.frontmatter.permalink || post.url,
   }));
 
-// Build project index
-const projectIndex: SearchItem[] = projects.map(project => ({
-  type: 'project' as const,
-  title: project.name,
-  description: project.description,
-  tags: project.tags,
-  date: project.startDate,
-  url: project.link || '/projects',
-}));
+// Build project index - filter out any modules without frontmatter
+const projectIndex: SearchItem[] = Object.values(allProjects)
+  .filter((project: any) => project && project.frontmatter && project.frontmatter.title)
+  .map((project: any) => ({
+    type: 'project' as const,
+    title: project.frontmatter.title,
+    description: project.frontmatter.description || '',
+    tags: project.frontmatter.tags || [],
+    date: project.frontmatter.start,
+    url: project.frontmatter.permalink || project.url,
+  }));
 
 // Export combined search index - Compiled at build-time
 export const searchIndex: SearchItem[] = [...postIndex, ...projectIndex];

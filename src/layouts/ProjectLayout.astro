@@ -1,0 +1,122 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+const { frontmatter } = Astro.props;
+import { siteConfig } from "../config";
+import "../styles/global.css";
+
+const author = frontmatter.author ?? siteConfig.author;
+
+// Dynamically import all images from assets/projects
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/projects/*.{jpeg,jpg,png,gif,webp,svg}', { eager: true });
+
+// Get header image - support both external URLs and local assets
+let headerImage = null;
+let headerImageUrl = null;
+
+if (frontmatter.headerimage) {
+  if (frontmatter.headerimage.startsWith('http') || frontmatter.headerimage.includes('://')) {
+    // External URL
+    headerImageUrl = frontmatter.headerimage;
+  } else if (frontmatter.headerimage.startsWith('/')) {
+    // Absolute path
+    headerImageUrl = frontmatter.headerimage;
+  } else {
+    // Try to load from src/assets/projects first (optimized)
+    const imagePath = `/src/assets/projects/${frontmatter.headerimage}`;
+    if (images[imagePath]) {
+      headerImage = images[imagePath].default;
+    } else {
+      // Fallback to public folder
+      headerImageUrl = `/imgs/projects/${frontmatter.headerimage}`;
+    }
+  }
+}
+
+// Extract description from frontmatter or generate from first paragraph
+const description = frontmatter.description || frontmatter.excerpt || siteConfig.description;
+
+// Format start date for metadata
+const publishedDate = frontmatter.start ? new Date(frontmatter.start).toISOString() : undefined;
+
+// Get tags for social media metadata
+const tags = frontmatter.tags || [];
+
+// Generate image URL for social media metadata - use absolute URL
+let socialImageUrl = null;
+if (headerImage) {
+  // For optimized images, we need to construct the full URL from the processed src
+  socialImageUrl = new URL(headerImage.src, Astro.site || 'https://dccoder.com').href;
+} else if (headerImageUrl) {
+  // For public images, construct absolute URL
+  socialImageUrl = new URL(headerImageUrl, Astro.site || 'https://dccoder.com').href;
+}
+---
+<BaseLayout
+  pageTitle={frontmatter.title}
+  description={description}
+  image={socialImageUrl}
+  author={author}
+  publishedDate={publishedDate}
+  type="article"
+  tags={tags}
+>
+  {(headerImage || headerImageUrl) && (
+    <div class="relative w-full max-h-96 my-4 sm:my-8 mx-auto rounded-lg overflow-hidden">
+      {headerImage ? (
+        <Image
+          src={headerImage}
+          alt={frontmatter.title}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+        />
+      ) : (
+        <img
+          src={headerImageUrl}
+          alt={frontmatter.title}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+          width="1200"
+          height="400"
+        />
+      )}
+      <div class="relative z-10 flex items-center justify-center p-4 sm:p-8 text-center min-h-[300px] sm:min-h-[350px]">
+        <div>
+          <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg px-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); color: white;">
+            {frontmatter.title}
+          </h1>
+          <p class="text-white text-sm sm:text-base md:text-lg mt-2 drop-shadow-lg">
+            {frontmatter.start} - {frontmatter.end || 'Present'}
+          </p>
+          <div class="tags mt-4 flex flex-wrap justify-center gap-2 px-4">
+            {frontmatter.tags.map((tag: string) => (
+              <a href={`/projects/tags/${tag}`} class="tag text-white bg-black bg-opacity-50 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm drop-shadow-lg hover:bg-opacity-70 transition-all">{tag}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+  {!headerImage && !headerImageUrl && (
+    <div class="text-center my-4 sm:my-8 px-4">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+        {frontmatter.title}
+      </h1>
+      <p class="text-base sm:text-lg mt-2">
+        {frontmatter.start} - {frontmatter.end || 'Present'}
+      </p>
+      <div class="tags mt-4 flex flex-wrap justify-center gap-2">
+        {frontmatter.tags.map((tag: string) => (
+          <a href={`/projects/tags/${tag}`} class="tag px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors">{tag}</a>
+        ))}
+      </div>
+    </div>
+  )}
+  <div class="article prose prose-sm sm:prose-base dark:prose-invert max-w-3xl mx-auto bg-white dark:bg-neutral-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg my-4 sm:my-8">
+    <slot />
+  </div>
+
+</BaseLayout>
