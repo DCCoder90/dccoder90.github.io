@@ -9,4 +9,20 @@ github: "https://github.com/DCCoder90/BlinkdotNet"
 other: ""
 --- 
 
-BlinkdotNet was...expand on project here
+## Overview
+
+BlinkdotNet is an unofficial .NET library for interacting with the Blink Monitor Protocol. This allows developers to integrate Blink camera networks into .NET applications, providing an asynchronous, C# interface for managing networks and cameras without needing to make raw REST calls.
+
+The library is designed to be consumed as a NuGet package. Users instantiate the `BlinkApiClient` with their Blink account credentials (username and password) to get started. Once instantiated, the client provides `async` methods to perform various actions, such as:
+
+* Fetching networks 
+* Getting camera and sync module details
+* Capturing thumbnails or video clips
+* Retrieving event/video history 
+* Checking system health and region info
+
+## Technologies Used
+
+* **.NET Core 2.1**
+* **xUnit**: The testing framework used
+* **Moq**: Used for creating mock objects for testing, particularly for mocking the REST client.
