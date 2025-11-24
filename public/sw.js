@@ -1,6 +1,6 @@
 //Special thanks to https://github.com/codepo8/github-page-pwa for these ideas and snippets!
-const CACHE_NAME = 'dccoder-v1';
-const RUNTIME_CACHE = 'dccoder-runtime-v1';
+const CACHE_NAME = 'dccoder-v2';
+const RUNTIME_CACHE = 'dccoder-runtime-v2';
 
 const STATIC_CACHE_URLS = [
   '/',
