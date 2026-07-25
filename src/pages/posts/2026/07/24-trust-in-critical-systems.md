@@ -13,9 +13,9 @@ headerimage: "locked-out-header.png"
 
 So, where do I start? First, hello everyone! I've started to realize that I fall into this trap of giving my website a lot of love and attention when I'm looking for a job, and then when I am employed, it kind of falls by the wayside. This is definitely something I need to work on.
 
-Regardless, I am here and I am employed! Since my post back in October 2025, I found a new position with a company called Temporal.io and, wow. I don't want to be *that* guy, but the engineer in me really has to point it out: this is truly an amazing product. I am part of the Developer Success team, so if you're speaking to support, there's a good chance I might chime in to help you out with a problem you're having. :)
+Regardless, I am here and I am employed! Since my post back in October 2025, I found a new position with a company called [Temporal.io](https://temporal.io) and, wow. I don't want to be *that* guy, but the engineer in me really has to point it out: this is truly an amazing product. I am part of the Developer Success team, so if you're speaking to support, there's a good chance I might chime in to help you out with a problem you're having. :)
 
-I have to say, I actually really enjoy this role. It's a lot different than my background in traditional software engineering, but all of my skills and past experiences absolutely help me out here. Reading source code, interpreting metrics, understanding architecture, developing reproductions—it’s basically a customer-facing software engineering job, but the customers are other engineers, so they speak my language! It’s really cool, and I get to assist in building customer confidence in our product.
+I have to say, I actually really enjoy this role. It's a lot different than my background in traditional software engineering, but all of my skills and past experiences absolutely help me out here. Reading source code, interpreting metrics, understanding architecture, developing reproductions, it’s basically a customer-facing software engineering job, but the customers are other engineers, so they speak my language! It’s really cool, and I get to assist in building customer confidence in our product.
 
 Speaking of confidence, that's actually what I want to talk about today.
 
