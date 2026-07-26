@@ -49,6 +49,10 @@ Oof... did I just get locked out? No way. After all, this is *free forever*, rig
 
 It seems that at some point this morning, Infisical quietly updated their pricing structure to [remove PAM from their free tier](https://web.archive.org/web/20260716200743/https://infisical.com/pricing). While simultaneously [announcing that they're just now launching PAM](https://www.linkedin.com/posts/today-were-launching-infisical-pam-privileged-ugcPost-7486450486393577472-Typh/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABHiKrMBJOBjFgDyOsqGaxGnB322JThrzfk), none of this adds up. Why was it on their website and docs for so long if it's just now being "launched"?
 
+### Quick update 7/26/26
+
+I did hear back on their community slack.  I was informed that it `might be a mistake` and to contact their support email.   I did that and am awaiting a response.   I also noted that the concept of "Free forever" has been removed from all of their pricing pages.   If you are on the "Free" tier with Infisical, that's your warning there.  Get out while you still have access to your secrets.
+
 ## The Fallout & Moving Forward
 
 So now I'm stuck in an awkward position: do I pay for PAM just to regain access to my services? Or do I wipe those three systems and start fresh? Because everything was formerly managed via CI/CD pipelines, it shouldn't be too difficult to get things configured to redeploy those services. But ultimately, I relied on this tool because I trusted a company in the security sector when they said "Free forever."
