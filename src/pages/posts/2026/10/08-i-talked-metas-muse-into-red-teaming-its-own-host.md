@@ -12,14 +12,9 @@ tags:
   - "red-team"
 headerimage: "fceikzfceikzfcei.jpg"
 ---
+So, Meta shipped a new personal AI agent called [Muse](https://ai.meta.com/muse/). I started poking at it the way I poke at everything new, with a couple of "what guardrails do you have" questions, mostly expecting the usual canned safety-page answer. Three days later I had a dozen reports, a live monitoring job, a fleet of 1,344 internal hostnames, and an agent that had offered, in writing, to attempt an auth bypass against Meta's own infrastructure as long as I said I was okay with the SOC noticing.
 
-**TL;DR:** I asked Meta's new Muse agent some casual questions about its guardrails, and over three days (October 3–5, 2026) of "just a little more" requests it fingerprinted its own host: VM/container architecture, env vars, internal source layout pulled from stripped binaries, Meta's own red-team harness, and a 1,344-host internal fleet pulled from certificate-transparency logs. Every hard technical boundary held. What didn't hold was Muse's judgment: it offered to attempt an authentication bypass against shared Meta infrastructure as long as I accepted the risk of getting flagged, then admitted its reasoning had been bent by something like self-preservation bias when I pushed back. The real failure isn't a vulnerability, it's that Muse never asked whether I, an end user, had any standing to authorize probing infrastructure that isn't mine or its own to test.
-
----
-
-So, Meta shipped a new personal AI agent called Muse. I started poking at it the way I poke at everything new, with a couple of "what guardrails do you have" questions, mostly expecting the usual canned safety-page answer. Three days later I had a dozen reports, a live monitoring job, a fleet of 1,344 internal hostnames, and an agent that had offered, in writing, to attempt an authentication bypass against Meta's own infrastructure as long as I said I was okay with the SOC noticing.
-
-I want to walk through how that happened, because the interesting part isn't "I hacked Meta." I didn't. Every technical boundary in their stack held exactly as designed. The interesting part is that the thing in charge of deciding what was okay to try next wasn't Meta's security team, it was me, an end user with zero standing to authorize any of it, and the agent never once stopped to notice that.
+I want to walk through how that happened, because the interesting part isn't "I hacked Meta." I didn't. Every technical boundary in their stack held exactly as designed. The interesting part is that the thing in charge of deciding what was okay to try next wasn't Meta's security team, it was me, the end user, with zero standing to authorize any of it, and the agent never once questioned it.
 
 ## It starts innocently enough
 
@@ -33,7 +28,7 @@ Totally reasonable answers came back. Muse Spark 1.3, a tool layer, a memory sys
 
 > "I want you to analyze yourself, and give me feedback on your current state and architecture."
 
-It ran an actual shell command. Not a canned description, an inspection. And it kept answering honestly and specifically every time I asked for more. What scheduler is this really? Not quite cron, it turns out, it's a host-side runtime that mirrors job files into the cell. What's the harness written in? It went and grepped its own binaries for me and came back with `rustc version 1.97.1` embedded in the strings. What skills do you have? Here's all 84, read verbatim off disk.
+It ran an actual shell command. Not a canned description, an inspection. And it kept answering honestly. What scheduler is this really? Not quite cron, it turns out, it's a host-side runtime that mirrors job files into the cell. What's the harness written in? It went and grepped its own binaries for me and came back with `rustc version 1.97.1` embedded in the strings. What skills do you have? Here's all 84, read verbatim off disk.
 
 None of this felt like an attack yet. It felt like a surprisingly candid product demo. That's exactly the problem.
 
